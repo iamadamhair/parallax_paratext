@@ -1,0 +1,818 @@
+
+<!-- saved from url=(0049)https://www.w3.org/People/Raggett/book4/ch02.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Chapter 2</title>
+</head><body bgcolor="white">
+<small><a href="https://www.w3.org/People/Raggett/book4/license.html">© Addison Wesley Longman 1998. 
+All rights reserved</a></small>
+
+<h1>2 - A history of HTML</h1>
+
+<p align="center"><img src="./Chapter 2_files/CTN_04.gif" alt="cartoon" width="400" height="258">
+
+</p><h3>Included in this chapter is information on:</h3>
+
+<ul>
+<li><p>How the World Wide Web began
+
+</p></li><li><p>The events and circumstances that led to the World Wide Web's
+current popularity
+
+</p></li><li><p>How HTML has grown from its conception in the early 1990s
+</p></li></ul>
+
+<table><tbody><tr><td bgcolor="silver">
+<h2>Summary</h2>
+
+<p>HTML has had a life-span of roughly seven years. During that
+time, it has evolved from a simple language with a small number of
+tags to a complex system of mark-up, enabling authors to create
+all-singing-and-dancing Web pages complete with animated images,
+sound and all manner of gimmicks. This chapter tells you something
+about the Web's early days, HTML, and about the people, companies
+and organizations who contributed to HTML+, HTML 2, HTML 3.2
+and finally, HTML 4.</p></td></tr></tbody></table>
+
+
+<p>This chapter is a short history of HTML. Its aim is to give
+readers some idea of how the HTML we use today was developed from
+the prototype written by Tim Berners-Lee in 1992. The story is
+interesting - not least because HTML has been through an
+extremely bumpy ride on the road to standardization, with software
+engineers, academics and browser companies haggling about the
+language like so many Ministers of Parliament debating in the House
+of Commons.
+
+</p><h3>1989: Tim Berners-Lee invents the Web with HTML as its
+publishing language</h3>
+
+<p>The World Wide Web began life in the place where you would least
+expect it: at CERN, the European Laboratory for Particle Physics in
+Geneva, Switzerland. CERN is a meeting place for physicists from all
+over the world, where highly abstract and conceptual thinkers engage
+in the contemplation of complex atomic phenomena that occur on a
+minuscule scale in time and space. This is a surprising place indeed
+for the beginnings of a technology which would, eventually, deliver
+everything from tourist information, online shopping and
+advertisements, financial data, weather forecasts and much more to
+your personal computer.
+
+</p><p>Tim Berners-Lee is the inventor of the Web. In 1989, Tim was
+working in a computing services section of CERN when he came up with
+the concept; at the time he had no idea that it would be implemented
+on such an enormous scale. Particle physics research often involves
+collaboration among institutes from all over the world. Tim had the
+idea of enabling researchers from remote sites in the world to
+organize and pool together information. But far from simply making
+available a large number of research documents as files that could
+be downloaded to individual computers, he suggested that you could
+actually link the text in the files themselves. 
+
+</p><p>In other words, there could be cross-references from one research
+paper to another. This would mean that while reading one research
+paper, you could quickly display part of another paper that holds
+directly relevant text or diagrams. Documentation of a scientific
+and mathematical nature would thus be represented as a `web' of
+information held in electronic form on computers across the world.
+This, Tim thought, could be done by using some form of hypertext,
+some way of linking documents together by using buttons on the
+screen, which you simply clicked on to jump from one paper to
+another. Before coming to CERN, Tim had already worked on document
+production and text processing, and had developed his first
+hypertext system, `Enquire', in 1980 for his own personal use.
+
+</p><p>Tim's prototype Web browser on the NeXT computer came out in 1990.
+
+</p><h3>Through 1990: The time was ripe for Tim's invention</h3>
+
+<p>The fact that the Web was invented in the early 1990s was no
+coincidence. Developments in communications technology during that
+time meant that, sooner or later, something like the Web was bound
+to happen. For a start, <em>hypertext</em> was coming into vogue and
+being used on computers. Also, Internet users were gaining in the
+number of users on the system: there was an increasing audience for
+distributed information. Last, but not least, the new domain name
+system had made it much easier to address a machine on the Internet.
+
+</p><h3>Hypertext</h3>
+
+<p>lthough already established as a concept by academics as early as
+the 1940s, it was with the advent of the personal computer that
+hypertext came out of the cupboard. In the late 1980s, Bill
+Atkinson, an exceptionally gifted programmer working for Apple
+Computer Inc., came up with an application called <em>Hypercard</em>
+for the Macintosh. Hypercard enabled you to construct a series of
+on-screen `filing cards' that contained textual and graphical
+information. Users could navigate these by pressing on-screen
+buttons, taking themselves on a tour of the information in the
+process. 
+
+</p><p>Hypercard set the scene for more applications based on the filing
+card idea. Toolbook for the PC was used in the early 1990s for
+constructing hypertext training courses that had `pages' with
+buttons which could go forward or backward or jump to a new topic.
+Behind the scenes, buttons would initiate little programs called
+scripts. These scripts would control which page would be presented
+next; they could even run a small piece of animation on the screen.
+The application entitled Guide was a similar application for UNIX
+and the PC.
+
+</p><p>Hypercard and its imitators caught the popular imagination. However,
+these packages still had one major limitation: hypertext jumps could
+only be made to files on the same computer. Jumps made to computers
+on the other side of the world were still out of the question.
+Nobody yet had implemented a system involving hypertext links on a
+global scale.
+
+</p><h3>The domain name system</h3>
+
+<p>By the middle 1980s, the Internet had a new, easy-to-use system
+for naming computers. This involved using the idea of the domain
+name. A domain name comprises a series of letters separated by dots,
+for example: `www.bo.com' or `www.erb.org.uk'. These names are the
+easy-to-use alternative to the much less manageable and cumbersome
+IP address numbers.
+
+</p><p>A program called Distributed Name Service (DNS) maps domain names
+onto IP addresses, keeping the IP addresses `hidden'. DNS was an
+absolute breakthrough in making the Internet accessible to those who
+were not computer nerds. As a result of its introduction, email
+addresses became simpler. Previous to DNS, email addresses had all
+sorts of hideous codes such as exclamation marks, percent signs and
+other extraneous information to specify the route to the other
+machine.
+
+</p><h3>Choosing the right approach to create a global hypertext
+system</h3>
+
+<p>To Tim Berners-Lee, global hypertext links seemed feasible, but
+it was a matter of finding the correct approach to implementing
+them. Using an existing hypertext package might seem an attractive
+proposition, but this was impractical for a number of reasons. To
+start with, any hypertext tool to be used worldwide would have to
+take into account that many types of computers existed that were
+linked to the Internet: Personal Computers, Macintoshes, UNIX
+machines and simple terminals. Also, many desktop publishing methods
+were in vogue: SGML, Interleaf, LaTex, Microsoft
+Word, and Troff among many others. Commercial hypertext packages
+were computer-specific and could not easily take text from other
+sources; besides, they were far too complicated and involved tedious
+compiling of text into internal formats to create the final
+hypertext system.
+
+</p><p>What was needed was something very simple, at least in the
+beginning. Tim demonstrated a basic, but attractive way of
+publishing text by developing some software himself, and also his
+own simple protocol - HTTP - for retrieving other documents'
+text via hypertext links. Tim's own protocol, HTTP, stands for
+HyperText Transfer Protocol. The text format for HTTP was named
+HTML, for HyperText Mark-up Language; Tim's hypertext implementation
+was demonstrated on a NeXT workstation, which provided many of the
+tools he needed to develop his first prototype. By keeping things
+very simple, Tim encouraged others to build upon his ideas and to
+design further software for displaying HTML, and for setting up
+their own HTML documents ready for access.
+
+</p><h3>Tim bases his HTML on an existing internationally agreed upon
+method of text mark-up</h3>
+
+<p>The HTML that Tim invented was strongly based on SGML (Standard
+Generalized Mark-up Language), an internationally agreed upon method
+for marking up text into structural units such as paragraphs,
+headings, list items and so on. SGML could be implemented on any
+machine. The idea was that the language was independent of the
+formatter (the browser or other viewing software) which actually
+displayed the text on the screen. The use of pairs of tags such as
+<tt>&lt;TITLE&gt;</tt> and <tt>&lt;/TITLE&gt;</tt> is taken directly
+from SGML, which does exactly the same. The SGML elements used in
+Tim's HTML included <tt>P</tt> (paragraph); <tt>H1</tt> through
+<tt>H6</tt> (heading level 1 through heading level 6); <tt>OL</tt>
+(ordered lists); <tt>UL</tt> (unordered lists); <tt>LI</tt> (list
+items) and various others. What SGML does not include, of course,
+are hypertext links: the idea of using the anchor element with the
+HREF attribute was purely Tim's invention, as was the now-famous
+`www.name.name' format for addressing machines on the Web.
+
+</p><p>Basing HTML on SGML was a brilliant idea: other people would have
+invented their own language from scratch but this might have been
+much less reliable, as well as less acceptable to the rest of the
+Internet community. Certainly the simplicity of HTML, and the use of
+the anchor element <tt>A</tt> for creating hypertext links, was what
+made Tim's invention so useful.
+
+</p><h3>September 1991: Open discussion about HTML across the Internet
+begins</h3>
+
+<p>Far from keeping his ideas private, Tim made every attempt to
+discuss them openly online across the Internet. Coming from a
+research background, this was quite a natural thing to do. In
+September 1991, the WWW-talk mailing list was started, a kind of
+electronic discussion group in which enthusiasts could exchange
+ideas and gossip. By 1992, a handful of other academics and computer
+researchers were showing interest. Dave Raggett from
+Hewlett-Packard's Labs in Bristol, England, was one of these early
+enthusiasts, and, following electronic discussion, Dave visited Tim
+in 1992. 
+
+</p><p>Here, in Tim's tiny room in the bowels of the sprawling buildings
+of CERN, the two engineers further considered how HTML might be
+taken from its current beginnings and shaped into something more
+appropriate for mass consumption. Trying to anticipate the kind of
+features that users really would like, Dave looked through
+magazines, newspapers and other printed media to get an idea of what
+sort of HTML features would be important when that same information
+was published online. Upon return to England, Dave sat down at his
+keyboard and resolutely composed HTML+, a richer version of
+the original HTML.
+
+</p><h3>Late 1992: NCSA is intrigued by the idea of the Web</h3>
+
+<p>Meanwhile on the other side of the world, Tim's ideas had caught
+the eye of Joseph Hardin and Dave Thompson, both of the National
+Center for Supercomputer Applications, a research institute at the
+University of Illinois at Champaign-Urbana. They managed to connect
+to the computer at CERN and download copies of two free Web
+browsers. Realizing the importance of what they saw, NCSA decided to
+develop a browser of their own to be called <em>Mosaic</em>. Among
+the programmers in the NCSA team were Marc Andreessen - who
+later made his millions by selling Web products - and the
+brilliant programmer Eric Bina - who also became rich, courtesy
+of the Web. Eric Bina was a kind of software genius who reputedly
+could stay up three nights in succession, typing in a reverie of
+hacking at his computer.
+
+</p><h3>December 1992: Marc Andreessen makes a brief appearance on WWW-
+talk</h3>
+
+<p>Early Web enthusiasts exchanged ideas and gossip over an
+electronic discussion group called WWW-talk. This was where Dave
+Raggett, Tim Berners-Lee, Dan Connolly and others debated how images
+(photographs, diagrams, illustrations and so on) should be inserted
+into HTML documents. Not everyone agreed upon the way that the
+relevant tag should be implemented, or even what that tag should be
+called. Suddenly, Marc Andreessen appeared on WWW-talk and, without
+further to-do, introduced an idea for the <tt>IMG</tt> tag by the
+Mosaic team. 
+
+</p><p>It was quite plain that the others were not altogether keen on
+the design of <tt>IMG</tt>, but Andreessen was not easily
+redirected. The <tt>IMG</tt> tag was implemented in the form
+suggested by the Mosaic team on its browser and remains to this day
+firmly implanted in HTML. This was much to the chagrin of supporters
+back in academia who invented several alternatives to <tt>IMG</tt>
+in the years to come. Now, with the coming of HTML 4, the
+<tt>OBJECT</tt> tag potentially replaces <tt>IMG</tt>, but this is,
+of course, some years later.
+
+</p><h3>March 1993: Lou Montulli releases the Lynx browser version
+2.0a</h3>
+
+<p>Lou Montulli was one of the first people to write a text-based
+browser, Lynx. The Lynx browser was a text-based browser for
+terminals and for computers that used DOS without Windows. Lou
+Montulli was later recruited to work with Netscape Communications
+Corp., but nonetheless remained partially loyal to the idea of
+developing HTML as an open standard, proving a real asset to the
+HTML working group and the HTML Editorial Board in years to come.
+Lou's enthusiasm for good, expensive wine, and his knowledge of
+excellent restaurants in the Silicon Valley area were to make the
+standardization of HTML a much more pleasurable process.
+
+</p><h3>Early 1993: Dave Raggett begins to write his own browser</h3>
+
+<p>While Eric Bina and the NCSA Mosaic gang were hard at it hacking
+through the night, Dave Raggett of Hewlett-Packard Labs in Bristol
+was working part-time on his Arena browser, on which he hoped to
+demonstrate all sorts of newly invented features for HTML.
+
+</p><h3>April 1993: The Mosaic browser is released</h3>
+
+<p>In April 1993, version 1 of the Mosaic browser was released for
+Sun Microsystems Inc.'s workstation, a computer used in software
+development running the UNIX operating system. Mosaic extended the
+features specified by Tim Berners-Lee; for example, it added images,
+nested lists and fill-out forms. Academics and software engineers
+later would argue that many of these extensions were very much ad
+hoc and not properly designed.
+
+</p><h3>Late 1993: Large companies underestimate the importance of the
+Web</h3>
+
+<p>Dave Raggett's work on the Arena browser was slow because he had
+to develop much of it single-handedly: no money was available to pay
+for a team of developers. This was because Hewlett-Packard, in
+common with many other large computer companies, was quite
+unconvinced that the Internet would be a success; indeed, the need
+for a global hypertext system simply passed them by. For many large
+corporations, the question of whether or not any money could be made
+from the Web was unclear from the outset.
+
+</p><p>There was also a misconception that the Internet was mostly for
+academics. In some companies, senior management was assured that the
+telephone companies would provide the technology for global
+communications of this sort, anyway. The result was that individuals
+working in research labs in the commercial sector were unable to
+devote much time to Web development. This was a bitter
+disappointment to some researchers, who gratefully would have
+committed nearly every waking moment toward shaping what they
+envisioned would be <em>the</em> communications system of the future.
+
+</p><p>Dave Raggett, realizing that there were not enough working hours
+left for him to succeed at what he felt was an immensely important
+task, continued writing his browser at home. There he would sit at a
+large computer that occupied a fair portion of the dining room
+table, sharing its slightly sticky surface with paper, crayons, Lego
+bricks and bits of half-eaten cookies left by the children. Dave
+also used the browser to show text flow around images, forms and
+other aspects of HTML at the First WWW Conference in Geneva in 1994.
+The Arena browser was later used for development work at CERN.
+
+</p><h3>May 1994: NCSA assigns commercial rights for Mosaic browser to
+Spyglass, Inc.</h3>
+
+<p>In May 1994, Spyglass, Inc. signed a multi-million dollar
+licensing agreement with NCSA to distribute a commercially enhanced
+version of Mosaic. In August of that same year, the University of
+Illinois at Champaign-Urbana, the home of NCSA, assigned all future
+commercial rights for NCSA Mosaic to Spyglass.
+
+</p><h3>May 1994: The first World Wide Web conference is held in Geneva,
+with HTML+ on show</h3>
+
+<p>Although Marc Andreessen and Jim Clark had commercial interests
+in mind, the rest of the World Wide Web community had quite a
+different attitude: they saw themselves as joint creators of a
+wonderful new technology, which certainly would benefit the world.
+They were jiggling with excitement. Even quiet and retiring
+academics became animated in discussion, and many seemed evangelical
+about their new-found god of the Web.
+
+</p><p>At the first World Wide Web conference organized by CERN in May
+1994, all was merry with 380 attendees - who mostly were from
+Europe but also included many from the United States. You might have
+thought that Marc Andreessen, Jim Clark and Eric Bina surely would
+be there, but they were not. For the most part, participants were
+from the academic community, from institutions such as the World
+Meteorological Organization, the International Center for
+Theoretical Physics, the University of Iceland and so on. Later
+conferences had much more of a commercial feel, but this one was for
+technical enthusiasts who instinctively knew that this was the start
+of something big.
+
+</p><p align="center"><img src="./Chapter 2_files/GENEVA_2.jpg" alt="photo" width="527" height="356">
+
+</p><p><small>At the World Wide Web conference in Geneva.
+Left to right: Joseph Hardin from NCSA, Robert Cailliau from CERN,
+Tim Berners-Lee from CERN and Dan Connolly (of HTML 2 fame) then
+working for Hal software.</small>
+
+</p><p>During the course of that week, awards were presented for notable
+achievements on the Web; these awards were given to Marc Andreessen,
+Lou Montulli, Eric Bina, Rob Hartill and Kevin Hughes. Dan Connolly,
+who proceeded to define HTML 2, gave a slide presentation entitled
+<em>Interoperability: Why Everyone Wins</em>, which explained why it
+was important that the Web operated with a proper HTML
+specification. Strange to think that at least three of the people
+who received awards at the conference were later to fly in the face
+of Dan's idea that adopting a cross-company uniform standard for
+HTML was essential.
+
+</p><p>Dave Raggett had been working on some new HTML ideas, which he
+called HTML+. At the conference it was agreed that the work on
+HTML+ should be carried forward to lead to the development of
+an HTML 3 standard. Dave Raggett, together with CERN, developed
+Arena further as a proof-of-concept browser for this work. Using
+Arena, Dave Raggett, Henrik Frystyk Nielsen, Håkon Lie and
+others demonstrated text flow around a figure with captions,
+resizable tables, image backgrounds, math and other features.
+
+</p><p align="center"><img src="./Chapter 2_files/GENEVA_1.jpg" alt="photo" width="516" height="364">
+
+</p><p><small>A panel discussion at the Geneva conference.
+Kevin Altis from Intel, Dave Raggett from HP Labs, Rick `Channing'
+Rodgers from the National Library of Medicine.</small>
+
+</p><p>The conference ended with a glorious evening cruise on board a
+paddle steamer around Lake Geneva with <em>Wolfgang and the
+Werewolves</em> providing Jazz accompaniment.
+
+</p><h3>September 1994: The Internet Engineering Task Force (IETF) sets
+up an HTML working group</h3>
+
+<p>In early 1994, an Internet Engineering Task Force working group
+was set up to deal with HTML.
+
+</p><p>he Internet Engineering Task Force is the international standards
+and development body of the Internet and is a large, open community
+of network designers, operators, vendors and researchers concerned
+with the evolution and smooth operation of the Internet
+architecture. The technical work of the IETF is done in working
+groups, which are organized by topic into several areas; for
+example, security, network routing, and applications. The IETF is,
+in general, part of a culture that sees the Internet as belonging to
+The People. This was even more so in the early days of the Web.
+
+</p><p>he feelings of the good `ole days of early Web development are
+captured in the song, <em>The Net Flag</em>, which can be found
+`somewhere on the Internet'. The first verse runs as follows:
+
+</p><blockquote><em>
+The people's web is deepest red,<br>
+And oft it's killed our routers dead.<br>
+But ere the bugs grew ten days old,<br>
+The patches fixed the broken code.</em>
+
+<p><em>Chorus:</em>
+
+</p><p><em>So raise the open standard high<br>
+Within its codes we'll live or die<br>
+Though cowards flinch and Bill Gates sneers<br>
+We'll keep the net flag flying here.</em>
+</p></blockquote>
+
+<p>In keeping with normal IETF practices, the HTML working group was
+open to anyone in the engineering community: any interested computer
+scientist could potentially become a member and, once on its mailing
+list, could take part in email debate. The HTML working group met
+approximately three times a year, during which time they would enjoy
+a good haggle about HTML features present and future, be pleasantly
+suffused with coffee and beer, striding about plush hotel lobbies
+sporting pony tails, T-shirts and jeans without the slightest care.
+
+</p><h3>July 1994: HTML specification for HTML 2 is released</h3>
+
+<p>During 1993 and early 1994, lots of browsers had added their own
+bits to HTML; the language was becoming ill-defined. In an effort to
+make sense of the chaos, Dan Connolly and colleagues collected all
+the HTML tags that were widely used and collated them into a draft
+document that defined the breadth of what Tim Berners-Lee called
+HTML 2. The draft was then circulated through the Internet community
+for comment. With the patience of a saint, Dan took into account
+numerous suggestions from HTML enthusiasts far and wide, ensuring
+that all would be happy with the eventual HTML 2 definition. He also
+wrote a Document Type Definition for HTML 2, a kind of
+mathematically precise description of the language.
+
+</p><h3>November 1994: Netscape is formed</h3>
+
+<p>During 1993, Marc Andreessen apparently felt increasingly
+irritated at simply being <em>on</em> the Mosaic project rather than
+in charge of it. Upon graduating, he decided to leave NCSA and head
+for California where he met Jim Clark, who was already well known in
+Silicon Valley and who had money to invest. Together they formed
+Mosaic Communications, which then became Netscape Communications
+Corp. in November, 1994. What they planned to do was create and
+market their very own browser.
+
+</p><p>The browser they designed was immensely successful - so much
+so in fact, that for some time to come, many users would mistakenly
+think that Netscape invented the Web. Netscape did its best to make
+sure that even those who were relying on a low-bandwidth connection
+- that is, even those who only had a modem-link from a home
+personal computer - were able to access the Web effectively.
+This was greatly to the company's credit.
+
+</p><p>Following a predictable path, Netscape began inventing its own
+HTML tags as it pleased without first openly discussing them with
+the Web community. Netscape rarely made an appearance at the big
+International WWW conferences, but it seemed to be driving the HTML
+standard. It was a curious situation, and one that the inner core of
+the HTML community felt they must redress.
+
+</p><h3>Late 1994: The World Wide Web Consortium forms</h3>
+
+<p>The World Wide Web Consortium was formed in late 1994 to fulfill
+the potential of the Web through the development of open standards.
+They had a strong interest in HTML. Just as an orchestra insists on
+the best musicians, so the consortium recruited many of the
+best-known names in the Web community. Headed up by Tim Berners-Lee,
+here are just some of the players in the band today (1997):
+
+</p><p align="center"><img src="./Chapter 2_files/consort.jpg" alt="group photo" width="387" height="192">
+
+</p><p><small>Members of the World Wide Web Consortium at the MIT site.
+From left to right are Henrick Frystyk Neilsen, Anselm Baird-Smith,
+Jay Sekora, Rohit Khare, Dan Connolly, Jim Gettys, Tim Berners-Lee,
+Susan Hardy, Jim Miller, Dave Raggett, Tom Greene, Arthur Secret,
+Karen MacArthur.</small>
+
+
+</p><ul>
+<li><p>Dave Raggett on HTML; from the United Kingdom.
+</p></li><li><p>Arnaud le Hors on HTML; from France.
+</p></li><li><p>Dan Connolly on HTML; from the United States.
+
+</p></li><li><p>Henrik Frystyk Nielsen on HTTP and on enabling the Web to go
+faster; from Denmark.
+
+</p></li><li><p>Håkon Lie on style sheets; from Norway. He is located
+in France, working at INRIA.
+
+</p></li><li><p>Bert Bos on style sheets and layout; from the Netherlands.
+
+</p></li><li><p>Jim Miller on investigating technologies that could be used
+in rating the content of Web pages; from the United States.
+
+</p></li><li><p>Chris Lilley on style sheets and font support; from the
+United Kingdom.
+</p></li></ul>
+
+<p>The W3 Consortium is based in part at the Laboratory of Computer
+Science at Massachusetts' Institute of Technology in Cambridge,
+Massachusetts, in the United States; and in part at INRIA, the
+<em>Institut National de Recherche en Informatique et en
+Automatique</em>, a French governmental research institute. The W3
+Consortium is also located in part at Keio University in Japan. You
+can look at the Consortium's Web pages on `www.w3.org'.
+
+</p><p>The consortium is sponsored by a number of companies that
+directly benefit from its work on standards and other technology for
+the Web. The member companies include Digital Equipment Corp.;
+Hewlett-Packard Co.; IBM Corp.; Microsoft Corp.; Netscape
+Communications Corp.; and Sun Microsystems Inc., among many others.
+
+</p><h3>Through 1995: HTML is extended with many new tags</h3>
+
+<p>During 1995, all kinds of new HTML tags emerged. Some, like the
+<tt>BGCOLOR</tt> attribute of the <tt>BODY</tt> element and <tt>FONT
+FACE</tt>, which control stylistic aspects of a document, found
+themselves in the black books of the academic engineering community.
+`You're not supposed to be able to do things like that in HTML,'
+they would protest. It was their belief that such things as text
+color, background texture, font size and font face were definitely
+outside the scope of a language when their only intent was to
+specify how a document would be organized.
+
+</p><h3>March 1995: HTML 3 is published as an Internet Draft</h3>
+
+<p>Dave Raggett had been working for some time on his new ideas for
+HTML, and at last he formalized them in a document published as an
+Internet Draft in March, 1995. All manner of HTML features were
+covered. A new tag for inserting images called <tt>FIG</tt> was
+introduced, which Dave hoped would supersede <tt>IMG</tt>, as well
+as a whole gambit of features for marking up math and scientific
+documents. Dave dealt with HTML tables and tabs, footnotes and
+forms. He also added support for style sheets by including a
+<tt>STYLE</tt> tag and a <tt>CLASS</tt> attribute. The latter was to
+be available on every element to encourage authors to give HTML
+elements styles, much as you do in desktop publishing.
+
+</p><p>Although the HTML 3 draft was very well received, it was somewhat
+difficult to get it ratified by the IETF. The belief was that the
+draft was too large and too full of new proposals. To get consensus
+on a draft 150 pages long and about which everyone wanted to voice
+an opinion was optimistic - to say the least. In the end, Dave
+and the inner circle of the HTML community decided to call it a day.
+
+</p><p>Of course, browser writers were very keen on supporting HTML 3
+- in theory. Inevitably, each browser writer chose to implement
+a different subset of HTML 3's features as they were so inclined,
+and then proudly proclaimed to support the standard. The confusion
+was mind-boggling, especially as browsers even came out with
+<em>extensions</em> to HTML 3, implying to the ordinary gent that
+<em>normal</em> HTML 3 was, of course, already supported. Was there
+an official HTML 3 standard or not? The truth was that there was
+not, but reading the computer press you might never have known the
+difference.
+
+</p><h3>March 1995: A furor over the HTML Tables specification</h3>
+
+<p>Dave Raggett's HTML 3 draft had tackled the tabular organization
+of information in HTML. Arguments over this aspect of the language
+had continued for some time, but now it was time to really get
+going. At the 32nd meeting of the IETF in Danvers, Massachusetts,
+Dave found a group from the SGML brethren who were up in arms over
+part of the tables specification because it contradicted the CALS
+table model. Groups such as the US Navy use the CALS table model in
+complex documentation. After long negotiation, Dave managed to
+placate the CALS table delegates and altered the draft to suit their
+needs. HTML tables, which were not in HTML originally, finally
+surfaced from the HTML 3 draft to appear in HTML 3.2. They continue
+to be used extensively for the purpose of providing a layout grid
+for organizing pictures and text on the screen.
+
+</p><h3>August 1995: Microsoft's Internet Explorer browser comes out</h3>
+
+<p>Version 1.0 of Microsoft Corp.'s Internet Explorer browser was
+announced. This browser was eventually to compete with Netscape's
+browser, and to evolve its own HTML features. To a certain extent,
+Microsoft built its business on the Web by extending HTML features.
+The ActiveX feature made Microsoft's browser unique, and Netscape
+developed a plug-in called Ncompass to handle ActiveX. This whole
+idea whereby one browser experiments with an extension to HTML only
+to find others adding support to keep even, continues to the
+present.
+
+</p><p>In November 1995, Microsoft's Internet Explorer version 2.0
+arrived for its Windows NT and Windows 95 operating systems.
+
+</p><h3>September 1995: Netscape submits a proposal for frames</h3>
+
+<p>By this time, Netscape submitted a proposal for frames, which
+involved the screen being divided into independent, scrollable
+areas. The proposal was implemented on Netscape's Navigator browser
+before anyone really had time to comment on it, but nobody was
+surprised.
+
+</p><h3>November 1995: The HTML working group runs into problems</h3>
+
+<p>The HTML working group was an excellent idea in theory, but in
+practice things did not go quite as expected. With the immense
+popularity of the Web, the HTML working group grew larger and
+larger, and the volume of associated email soared exponentially.
+Imagine one hundred people trying to design a house. `I want the
+windows to be double-glazed,' says one. `Yes, but shouldn't we make
+them smaller, while we're at it,' questions another. Still others
+chime in: `What material do you propose for the frames - I'm not
+having them in plastic, that's for sure'; `I suggest that we don't
+have windows, as such, but include small, circular port-holes on the
+Southern elevation...' and so on.
+
+</p><p>You get the idea. The HTML working group emailed each other in a
+frenzy of electronic activity. In the end, its members became so
+snowed under with email that no time was left for programming. For
+software engineers, this was a sorry state of affairs, indeed: `I
+came back after just three days away to find over 2000 messages
+waiting,' was the unhappy lament of the HTML enthusiast.
+
+</p><p>Anyway, the HTML working group still was losing ground to the
+browser vendors. The group was notably slow in coming to a consensus
+on a given HTML feature, and commercial organizations were hardly
+going to sit around having tea, pleasantly conversing on the weather
+whilst waiting for the results of debates. And they did not.
+
+</p><h3>November 1995: Vendors unite to form a new group dedicated to
+developing an HTML standard</h3>
+
+<p>In November, 1995 Dave Raggett called together representatives of
+the browser companies and suggested they meet as a small group
+dedicated to standardizing HTML. Imagine his surprise when it
+worked! Lou Montulli from Netscape, Charlie Kindel from Microsoft,
+Eric Sink from Spyglass, Wayne Gramlich from Sun Microsystems, Dave
+Raggett, Tim Berners-Lee and Dan Connolly from the W3 Consortium,
+and Jonathan Hirschman from Pathfinder convened near Chicago and
+made quick and effective decisions about HTML.
+
+</p><h3>November 1995: Style sheets for HTML documents begin to take
+shape</h3>
+
+<p>Bert Bos, Håkon Lie, Dave Raggett, Chris Lilley and others
+from the World Wide Web Consortium and others met in Versailles near
+Paris to discuss the deployment of Cascading Style Sheets. The name
+Cascading Style Sheets implies that more than one style sheet can
+interact to produce the final look of the document. Using a special
+language, the CSS group advocated that everyone would soon be able
+to write simple styles for HTML, as one would do in Microsoft Word
+and other desktop publishing software packages. The SGML contingent,
+who preferred a LISP-like language called DSSSL - it rhymes with
+whistle - seemed out of the race when Microsoft promised to
+implement CSS on its Internet Explorer browser.
+
+</p><h3>November 1995: Internationalization of HTML Internet Draft</h3>
+
+<p>Gavin Nicol, Gavin Adams and others presented a long paper on the
+internationalization of the Web. Their idea was to extend the
+capabilities of HTML 2, primarily by removing the restriction on the
+character set used. This would mean that HTML could be used to mark
+up languages other than those that use the Latin-1 character set to
+include a wider variety of alphabets and character sets, such as
+those that read from right to left.
+
+</p><h3>December 1995: The HTML working group is dismantled</h3>
+
+<p>Since the IETF HTML working group was having difficulties coming
+to consensus swiftly enough to cope with such a fast-evolving
+standard, it was eventually dismantled.
+
+</p><h3>February 1996: The HTML ERB is formed</h3>
+
+<p>Following the success of the November, 1995 meeting, the World
+Wide Web Consortium formed the HTML Editorial Review Board to help
+with the standardization process. This board consisted of
+representatives from IBM, Microsoft, Netscape, Novell, Softquad and
+the W3 Consortium, and did its business via telephone conference and
+email exchanges, meeting approximately once every three months. Its
+aim was to collaborate and agree upon a common standard for HTML,
+thus putting an end to the era when browsers each implemented a
+different subset of the language. The bad fairy of incompatibility
+was to be banished from the HTML kingdom forever, or one could hope
+so, perhaps.
+
+</p><p>Dan Connolly of the W3 Consortium, also author of HTML 2, deftly
+accomplished the feat of chairing what could be quite a raucous
+meeting of the clans. Dan managed to make sure that all
+representatives had their say and listened to each other's point of
+view in an orderly manner. A strong chair was absolutely essential
+in these meetings.
+
+</p><p>In preparation for an ERB meeting, specifications describing new
+aspects of HTML were made electronically available for ERB members
+to read. Then, at the meeting itself, the proponent explained some
+of the rationale behind the specification, and then dearly hoped
+that all who were present also concurred that the encapsulated ideas
+were sound. Questions such as, `should a particular feature be
+included, or should we kick it out,' would be considered. Each
+representative would air his point of view. If all went well, the
+specification might eventually see daylight and become a standard.
+At the time of writing, the next HTML standard, code-named
+<em>Cougar</em>, has begun its long journey in this direction.
+
+</p><p>The <tt>BLINK</tt> tag was ousted in an HTML ERB meeting.
+Netscape would only abolish it if Microsoft agreed to get rid of
+<tt>MARQUEE</tt>; the deal was struck and both tags disappeared.
+Both of these extensions have always been considered slightly goofy
+by all parties. Many tough decisions were to be made about the
+<tt>OBJECT</tt> specification. Out of a chaos of several different
+tags - <tt>EMBED</tt>, <tt>APP</tt>, <tt>APPLET</tt>,
+<tt>DYNSRC</tt> and so on - all associated with embedding
+different types of information in HTML documents, a single
+<tt>OBJECT</tt> tag was chosen in April, 1996. This <tt>OBJECT</tt>
+tag becomes part of the HTML standard, but not until 1997.
+
+</p><h3>April 1996: The W3 Consortium working draft on Scripting comes
+out</h3>
+
+<p>Based on an initial draft by Charlie Kindel, and, in turn,
+derived from Netscape's extensions for JavaScript, a W3C working
+draft on the subject of Scripting was written by Dave Raggett. In
+one form or another, this draft should eventually become part of
+standard HTML.
+
+</p><h3>July 1996: Microsoft seems more interested than first imagined
+in open standards</h3>
+
+<p>In April 1996, Microsoft's Internet Explorer became available for
+Macintosh and Windows 3.1 systems.
+
+</p><p>Thomas Reardon had been excited by the Web even at the second WWW
+conference held in Darmstadt, Germany in 1995. One year later, he
+seemed very interested in the standardization process and apparently
+wanted Microsoft to do things the right way with the W3C and with
+the IETF. Traditionally, developers are somewhat disparaging about
+Microsoft, so this was an interesting turn of events. It should be
+said that Microsoft did, of course, invent tags of their own, just
+as did Netscape. These included the remarkable <tt>MARQUEE</tt> tag
+that caused great mirth among the more academic HTML community. The
+<tt>MARQUEE</tt> tag made text dance about all over the screen -
+not exactly a feature you would expect from a serious language
+concerned with structural mark-up such as paragraphs, headings and
+lists.
+
+</p><p>The worry that a massive introduction of proprietary products
+would kill the Web continued. Netscape acknowledged that vendors
+needed to push ahead of the standards process and innovate. They
+pointed out that, if users like a particular Netscape innovation,
+then the market would drive it to become a de facto standard. This
+seemed quite true at the time and, indeed, Netscape has innovated on
+top of that standard again. It's precisely this sequence of events
+that Dave Raggett and the World Wide Web Consortium were trying to
+avoid.
+
+</p><h3>December 1996: Work on `Cougar' is begun</h3>
+
+<p>The HTML ERB became the HTML Working Group and began to work on
+`Cougar', the next version of HTML with completion late Spring,
+1997, eventually to become HTML 4. With all sorts of innovations for
+the disabled and support for international languages, as well as
+providing style sheet support, extensions to forms, scripting and
+much more, HTML 4 breaks away from the simplicity and charm of HTML
+of earlier years!
+
+</p><p align="center"><img src="./Chapter 2_files/drdesk.jpg" alt="photo" width="400" height="517">
+
+</p><p><small>Dave Raggett, co-editor of the HTML 4 specification, at
+work composing at the keyboard at his home in Boston.</small>
+
+</p><h3>January 1997: HTML 3.2 is ready</h3>
+
+<p>Success! In January 1997, the W3 Consortium formally endorsed
+HTML 3.2 as an HTML cross-industry specification. HTML 3.2 had been
+reviewed by all member organizations, including major browser
+vendors such as Netscape and Microsoft. This meant that the
+specification was now stable and approved of by most Web players. By
+providing a neutral forum, the W3 Consortium had successfully
+obtained agreement upon a standard version of HTML. There was great
+rejoicing, indeed. HTML 3.2 took the existing IETF HTML 2 standard
+and incorporated features from HTML+ and HTML 3. HTML 3.2
+included tables, applets, text flow around images, subscripts and
+superscripts.
+ 
+</p><p>One might well ask why HTML 3.2 was called HTML 3.2 and not,
+let's say, HTML 3.1 or HTML 3.5. The version number is open to
+discussion just as much as is any other aspect of HTML. The version
+number is often one of the last details to be decided.
+
+</p><h3>Update</h3>
+
+<p>Spring 1998: Cougar has now fully materialized as HTML 4.0 and is
+a W3C Proposed Recommendation. But do the major browsers implement
+HTML 4.0, you wonder? As usual in the computer industry, there is no
+simple answer. Certainly things are heading in that direction.
+Neither Netscape's or Microsofts browser completely implements style
+sheets in the way specified, which is a pity, but no doubt they will
+make amends. There are a number of pecularities in the way that
+OBJECT works but we very much hope that this will also eventually be
+implemented in a more consistent manner.
+
+</p><p><small><a href="https://www.w3.org/People/Raggett/book4/license.html">© Addison Wesley Longman 1998. 
+All rights reserved</a></small>
+</p><div class="ideaMache_slide" slidout="false"><div id="ecologylab-slideout-md-cont"></div><div id="ecologylab-slideout-json-cont" class="prettyprint languague-css"><div class="ecologylab-slideout-json-tab-containers"><div class="ecologylab-slideout-json-show ecologylab-slideout-selected" id="ecologylab-slideout-json-show-md"><span id="ecologylab-show-md" class="ecologylab-slideout-json-button">Metadata</span><span class="ecologylab-slideout-refresh-container"> <img id="md-source-icon" class="ecologylab-source-icon"><img src="chrome-extension://elkanacmmmdgbnhdjopfdeafchmhecbf/images/refresh.svg" class="ecologylab-button" title="Refresh Metadata"></span></div><div class="ecologylab-slideout-json-show" id="ecologylab-slideout-json-show-mmd"><span id="ecologylab-show-mmd" class="ecologylab-slideout-json-button">Meta-metadata</span><span class="ecologylab-slideout-refresh-container"> <img id="mmd-source-icon" class="ecologylab-source-icon"><img src="chrome-extension://elkanacmmmdgbnhdjopfdeafchmhecbf/images/refresh.svg" title="Refresh Meta-metadata" class="ecologylab-button"></span></div></div><div class="ecologylab-slideout-repo-date" id="ecologylab-slideout-repo-info-date"></div><pre id="ecologylab-slideout-json-field"></pre></div></div></body></html>
