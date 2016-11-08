@@ -2,34 +2,47 @@ body{
     background-color:lightgray;
 }
 
+#backgroundImage{
+    background-image:url("../images/studio.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    z-index:-2;
+    width:3500px;
+    height:2500px;
+    position:fixed;
+    top:-1300px;
+    left:-1500px;
+    -webkit-filter: blur(10px);
+}
+
 .animation-container { 
     margin: auto;
     position:fixed;
-    width:300px;
-    height:400px;
-    right:-300px;
-    top:0px;
-    background-color:green;
+    width:200px;
+    height:250px;
+    right:-200px;
+    top:50px;
+    background-color:red;
 }
 
-.animation-container.enter {
-    -webkit-animation: enterTranslate 1s; /* Safari & Chrome */
+/*.animation-container.enter {
+    -webkit-animation: enterTranslate 1s; 
     -webkit-animation-iteration-count: 1; 
     -webkit-animation-fill-mode:forwards;
 }
 .animation-container.exit {
-    -webkit-animation: exitTranslate 1s; /* Safari & Chrome */
+    -webkit-animation: exitTranslate 1s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
 
 .animation-container.shiftUp {
-    -webkit-animation: shiftUp 1s; /* Safari & Chrome */
+    -webkit-animation: shiftUp 1s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards;
 }
 
-@-webkit-keyframes inout { /* Safari & Chrome */
+@-webkit-keyframes inout { 
 0%   { -webkit-transform: scale(0, 0); } 
 25%  { -webkit-transform: scale(2, 2); }
 50%  { -webkit-transform: scale(0, 0); }
@@ -49,7 +62,7 @@ body{
 @-webkit-keyframes shiftUp{ 
 0%   { -webkit-transform:  translate(-300px, 0px) ;   } 
 100%   { -webkit-transform:  translate(-300px, -400px);   }
-} 
+}*/ 
 
 #banner{
     width:100%;
@@ -59,9 +72,10 @@ body{
     display:inline-block;
     text-align:center;
     font-size:30px;
-    position:absolute;
+    position:fixed;
     top:0px;
     left:0px;
+    z-index:5;
 }
 
 #bannerBuffer{
@@ -98,6 +112,6 @@ body{
 }
 
 .containerImage{
-    width:300px;
-    height:300px;
+    width:200px;
+    height:200px;
 }
