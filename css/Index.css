@@ -1,0 +1,88 @@
+
+#banner{
+    width:100%;
+    height:50px;
+    background-color:black;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    font-size:30px;
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:5;
+}
+
+#bannerBuffer{
+    height:50px;
+}
+
+#underTitle{
+    width:100%;
+    text-align:center;
+}
+
+#backgroundImage{
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:-5;
+}
+
+#poem {
+    width:400px;
+    display:inline-block;
+    text-align:center;
+    position:relative;
+    left:-300px;
+    top:-10px;
+    z-index:2;
+    background-color:beige;
+    padding:10px;
+    color:lightgray;
+}
+
+#spaceBeforePoemTitle{
+    height:200px;
+}
+
+#poemTitle {
+    font-size:40px;
+    text-align:center;
+    position:relative;
+    color:black;
+}
+
+#titleThe{
+    position:relative;
+    left:-50px;
+}
+
+#titleRape{
+    font-size:80px; 
+}
+
+#titleOfThe{
+    position:relative;
+    right:-50px;
+}
+
+#titleLock{
+    font-size:80px; 
+}
+
+#author{ 
+    color:black;
+}
+
+#spaceUnderPoemTitle{
+    height:300px;
+}
+
+.stanza {
+
+}
+
+.line {
+
+}
