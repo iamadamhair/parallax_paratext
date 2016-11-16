@@ -22,12 +22,32 @@
     text-align:center;
 }
 
-#backgroundImage{
+.backgroundImage{
     position:fixed;
     top:0px;
     left:0px;
     z-index:-5;
 }
+.backgroundImage.enter {
+    -webkit-animation: enterTranslate 1s; 
+    -webkit-animation-iteration-count: 1; 
+    -webkit-animation-fill-mode:forwards;
+}
+.backgroundImage.exit {
+    -webkit-animation: exitTranslate 1s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode:forwards; 
+}
+
+@-webkit-keyframes enterTranslate { 
+0%   { -webkit-transform:  translate(-1920px, 0px) ;   } 
+100%   { -webkit-transform:  translate(0px, 0px);   }
+} 
+@-webkit-keyframes exitTranslate { 
+0%   { -webkit-transform:  translate(0px, 0px) ;   } 
+100%   { -webkit-transform:  translate(-1920px, 0px);   }
+} 
+
 
 #poem {
     width:400px;
@@ -85,4 +105,8 @@
 
 .line {
 
+}
+
+#spaceUnderPoem{
+    height:1000px;
 }
