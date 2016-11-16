@@ -2,7 +2,7 @@
 var darkenStanzaPercentage = "40%";
 
 var darkenPercentage = "70%";
-var lightenPercentage = "30%";
+var lightenPercentage = "40%";
 var backgroundSlideTime = 1.5;
 
 function DarkenText(id) {
