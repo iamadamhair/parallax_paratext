@@ -29,12 +29,12 @@
     z-index:-5;
 }
 .backgroundImage.enter {
-    -webkit-animation: enterTranslate 1s; 
+    -webkit-animation: enterTranslate 1.5s; 
     -webkit-animation-iteration-count: 1; 
     -webkit-animation-fill-mode:forwards;
 }
 .backgroundImage.exit {
-    -webkit-animation: exitTranslate 1s; 
+    -webkit-animation: exitTranslate 1.5s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
@@ -57,9 +57,11 @@
     left:-300px;
     top:-10px;
     z-index:2;
-    background-color:beige;
+    background:beige;
     padding:10px;
     color:lightgray;
+    border-left:1px solid gray;
+    border-right:1px solid gray;
 }
 
 #spaceBeforePoemTitle{
@@ -67,11 +69,39 @@
 }
 
 #poemTitle {
-    font-size:40px;
+    font-size:80px;
     text-align:center;
     position:relative;
     color:black;
 }
+
+
+
+#titleElegy{
+    position:relative;
+    left:-70px;
+}
+#titleWritten{
+    /*position:relative;
+    right:-5px;*/
+}
+#titleInA{
+    font-size:40px;
+    position:relative;
+    right:-25px;
+}
+#titleCountry{
+    font-size:70px;
+    position:relative;
+    right:-25px;
+}
+#titleChurchyard{
+    font-size:70px;
+    position:relative;
+    right:-6px;
+}
+
+
 
 #titleThe{
     position:relative;
@@ -102,6 +132,25 @@
 .stanza {
 
 }
+.stanza.black {
+    -webkit-animation: fadeBlack .5s; 
+    -webkit-animation-iteration-count: 1; 
+    -webkit-animation-fill-mode:forwards;
+}
+.stanza.lightgray {
+    -webkit-animation: fadeGray .5s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode:forwards; 
+}
+
+@keyframes fadeBlack {
+0% { color:lightgray; }
+100% { color:black; }
+}
+@keyframes fadeGray {
+0% { color:black; }
+100% { color:lightgray; }
+}
 
 .line {
 
@@ -110,3 +159,46 @@
 #spaceUnderPoem{
     height:1000px;
 }
+
+.containsNote{
+    text-decoration:underline;
+}
+
+.note{
+    position:absolute;
+    right:-115px;
+    width:100px;
+    z-index:1;
+    background:beige;
+    opacity:0;
+    border-radius:5px;
+    padding:3px;
+    border:1px solid black;
+}
+.note.enter {
+    -webkit-animation: fadein .5s; 
+    -webkit-animation-iteration-count: 1; 
+    -webkit-animation-fill-mode:forwards;
+}
+.note.exit {
+    -webkit-animation: fadeout .5s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode:forwards; 
+}
+
+@keyframes fadein {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeout {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+@-webkit-keyframes enterNote { 
+0%   { -webkit-transform:  translate(0px, 0px) ;   } 
+100%   { -webkit-transform:  translate(100px, 0px);   }
+} 
+@-webkit-keyframes exitNote { 
+0%   { -webkit-transform:  translate(100px, 0px) ;   } 
+100%   { -webkit-transform:  translate(0px, 0px);   }
+} 
