@@ -29,12 +29,12 @@
     z-index:-5;
 }
 .backgroundImage.enter {
-    -webkit-animation: fadein 2s; 
+    -webkit-animation: enterTranslate 1.5s; 
     -webkit-animation-iteration-count: 1; 
     -webkit-animation-fill-mode:forwards;
 }
 .backgroundImage.exit {
-    -webkit-animation: fadeout 2s; 
+    -webkit-animation: exitTranslate 1.5s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
@@ -77,24 +77,48 @@
 
 
 
-#titleAn{
-    font-size:40px;
+#titleElegy{
     position:relative;
-    left:-67px;
+    left:-70px;
 }
-#titleEssay{
+#titleWritten{
     /*position:relative;
     right:-5px;*/
 }
-#titleOn{
+#titleInA{
     font-size:40px;
     position:relative;
-    right:-67px;
+    right:-25px;
 }
-#titleWoman{
-    font-size:60px;
-    /*position:relative;
-    right:-25px;*/
+#titleCountry{
+    font-size:70px;
+    position:relative;
+    right:-25px;
+}
+#titleChurchyard{
+    font-size:70px;
+    position:relative;
+    right:-6px;
+}
+
+
+
+#titleThe{
+    position:relative;
+    left:-50px;
+}
+
+#titleRape{
+    font-size:80px; 
+}
+
+#titleOfThe{
+    position:relative;
+    right:-50px;
+}
+
+#titleLock{
+    font-size:80px; 
 }
 
 #author{ 
@@ -129,7 +153,7 @@
 }
 
 .line {
-    height:80px;
+
 }
 
 #spaceUnderPoem{
