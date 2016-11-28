@@ -46,6 +46,18 @@ $('.containsNote').mouseout(function () {
     }
 })
 
+function AnimateWhiteBox() {
+    if (currentStanza == 0) {
+        $("#whiteBox").animate({ height: "0" }, 500);
+        document.getElementById("whiteBox").style.display = "none";
+    }
+    else {
+        document.getElementById("whiteBox").style.display = "block";
+        var clientHeight = document.getElementById('stanza'.concat(currentStanza.toString())).clientHeight;
+        $("#whiteBox").animate({ height: clientHeight.toString() }, 500);
+    }
+}
+
 $('.stanza').waypoint(function (direction) {
     var stanzaNumber = parseInt((this.element.id).match(/\d+$/)[0], 10);
     if (direction == "down")
@@ -62,6 +74,7 @@ $('.stanza').waypoint(function (direction) {
             currentStanza = stanzaNumber - 1;
     }
     UpdateCurrentStanza();
+    AnimateWhiteBox();
 //      DarkenText(this.element.id);
 }, { offset: darkenStanzaPercentage })
 
@@ -132,9 +145,16 @@ function checkKey(e) {
 }
 
 function ScrollTo(number) {
-    $('html, body').animate({
-        scrollTop: $("#stanza".concat(number.toString())).offset().top - 500
-    }, 500);
+    if (number == 0) {
+        $('html, body').animate({
+            scrollTop: $("#titleAn").offset().top - 300
+        }, 500);
+    }
+    else {
+        $('html, body').animate({
+            scrollTop: $("#stanza".concat(number.toString())).offset().top - 500
+        }, 500);
+    }
 }
 
 function UpdateCurrentStanza()

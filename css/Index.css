@@ -56,7 +56,24 @@
     position:relative;
     left:-300px;
     top:-10px;
-    z-index:2;
+    z-index:3;
+    /*background:green;*/
+    padding:10px;
+    color:lightgray;
+    /*border-left:1px solid gray;*/
+    /*border-right:1px solid gray;*/
+}
+
+#poemBackground {
+    width:400px;
+    display:inline-block;
+    text-align:center;
+    position:fixed;
+    top:0px;
+    left:380px;
+    width:400px;
+    height:3000px;
+    z-index:1;
     background:beige;
     padding:10px;
     color:lightgray;
@@ -103,6 +120,21 @@
 
 #spaceUnderPoemTitle{
     height:300px;
+}
+
+#whiteBox{
+    height:0px;
+    position:fixed;
+    top:475px;
+    left:340px;
+    width:500px;
+    z-index:2;
+    color:white;
+    background-color:white;
+    border-radius:10px;
+    border:2px solid white;
+    opacity:.8;
+    display:none;
 }
 
 .stanza {
