@@ -106,7 +106,8 @@
 }
 
 .stanza {
-
+    /*border-top:2px solid blue;
+    border-bottom:2px solid green;*/
 }
 .stanza.black {
     -webkit-animation: fadeBlack .5s; 

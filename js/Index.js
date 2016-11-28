@@ -52,13 +52,16 @@ $('.stanza').waypoint(function (direction) {
     {
         DarkenStanzaDown(stanzaNumber);
         AnimateDown(stanzaNumber);
+        currentStanza = stanzaNumber;
     }
     else
     {
         DarkenStanzaUp(stanzaNumber);
         AnimateUp(stanzaNumber);
+        if(stanzaNumber > 0)
+            currentStanza = stanzaNumber - 1;
     }
-    currentStanza = stanzaNumber;
+    UpdateCurrentStanza();
 //      DarkenText(this.element.id);
 }, { offset: darkenStanzaPercentage })
 
@@ -109,4 +112,33 @@ function AnimateUp(number) {
 
 function AnimateDown(number) {
     $("#background".concat((number - 1).toString())).addClass("exit");
+}
+
+document.onkeydown = checkKey;
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '37') {
+        currentStanza = currentStanza - 1;
+        ScrollTo(currentStanza);
+        UpdateCurrentStanza();
+    }
+    else if (e.keyCode == '39') {
+        currentStanza = currentStanza + 1;
+        ScrollTo(currentStanza);
+        UpdateCurrentStanza();
+    }
+}
+
+function ScrollTo(number) {
+    $('html, body').animate({
+        scrollTop: $("#stanza".concat(number.toString())).offset().top - 500
+    }, 500);
+}
+
+function UpdateCurrentStanza()
+{
+    //var text = document.getElementById("currentStanza");
+    //text.innerHTML = currentStanza.toString();
 }
