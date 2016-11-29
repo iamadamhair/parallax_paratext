@@ -117,14 +117,28 @@ function DarkenStanzaUp(stanzaNumber) {
 }
 
 function AnimateUp(number) {
-    //if (number != currentStanza) {
-        $("#background".concat((number - 1).toString())).removeClass("exit");
-        $("#background".concat((number - 1).toString())).addClass("enter");
-    //}
+    $("#image".concat((number).toString())).removeClass("enter");
+    $("#image".concat((number).toString())).addClass("exit");
+
+    $("#image".concat((number - 1).toString())).removeClass("exit");
+    $("#image".concat((number - 1).toString())).addClass("enter");
 }
 
+var imageHeight = 1055;
 function AnimateDown(number) {
-    $("#background".concat((number - 1).toString())).addClass("exit");
+    $("#image".concat((number - 1).toString())).removeClass("enter");
+    $("#image".concat((number - 1).toString())).addClass("exit");
+
+    if (number > 0) {
+        var image = document.getElementById("actualImage".concat(number.toString()));
+        var height = image.clientHeight;
+        var adjustment = imageHeight / parseFloat(height);
+        image.style.height = imageHeight;
+        image.style.width = adjustment * image.clientWidth;
+    }
+
+    $("#image".concat((number).toString())).removeClass("exit");
+    $("#image".concat((number).toString())).addClass("enter");
 }
 
 document.onkeydown = checkKey;
