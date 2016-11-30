@@ -133,6 +133,28 @@
 100%   { -webkit-transform:  translate(-1920px, 0px);   }
 } 
 
+.whiteCloud{
+    position:fixed;
+    background-color:white;
+    height:1080px;
+    width:1920px;
+    top:0;
+    left:0;
+    z-index:50;
+    opacity:0;
+}
+
+.whiteCloud.cloudActivate{
+    -webkit-animation: cloudActivate .5s; 
+    -webkit-animation-iteration-count: 1; 
+}
+
+@keyframes cloudActivate {
+0% { opacity: 0; }
+20% { opacity: .4; }
+100% { opacity: 0; }
+}
+
 
 #whiteBox{
     height:0px;
@@ -261,7 +283,7 @@
 
 .note{
     position:absolute;
-    right:-115px;
+    left:-15px;
     width:100px;
     z-index:1;
     background:beige;
@@ -271,12 +293,12 @@
     border:1px solid black;
 }
 .note.enter {
-    -webkit-animation: fadein .5s; 
+    -webkit-animation: fadein .5s, enterNote .5s; 
     -webkit-animation-iteration-count: 1; 
     -webkit-animation-fill-mode:forwards;
 }
 .note.exit {
-    -webkit-animation: fadeout .5s; 
+    -webkit-animation: fadeout .5s, exitNote .5s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
@@ -299,9 +321,9 @@
 }
 @-webkit-keyframes enterNote { 
 0%   { -webkit-transform:  translate(0px, 0px) ;   } 
-100%   { -webkit-transform:  translate(100px, 0px);   }
+100%   { -webkit-transform:  translate(-100px, 0px);   }
 } 
 @-webkit-keyframes exitNote { 
-0%   { -webkit-transform:  translate(100px, 0px) ;   } 
+0%   { -webkit-transform:  translate(-100px, 0px) ;   } 
 100%   { -webkit-transform:  translate(0px, 0px);   }
 } 

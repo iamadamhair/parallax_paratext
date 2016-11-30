@@ -172,10 +172,11 @@ function checkKey(e) {
 
     e = e || window.event;
 
-    if (e.keyCode == '38') {
-        currentStanza = currentStanza - 1;
-        ScrollTo(currentStanza);
-        UpdateCurrentStanza();
+    if (e.keyCode == '37') {
+        ToggleLeftSide();
+    }
+    else if (e.keyCode == '38') {
+        MoveUp();
     }
     else if (e.keyCode == '39') {
         Flip();
@@ -208,11 +209,68 @@ function UpdateCurrentStanza()
 
 var flipped = false;
 function Flip() {
-    if (flipped) {
-        $("#card").removeClass('flipped');
+    if (currentStanza > 0) {
+        if (flipped) {
+            $("#card").removeClass('flipped');
+        }
+        else {
+            $("#card").addClass('flipped');
+        }
+        flipped = !flipped;
     }
     else {
-        $("#card").addClass('flipped');
+        CloudActivate();
     }
-    flipped = !flipped;
+}
+
+var leftOut = false;
+function ToggleLeftSide() {
+    var notes = $("#stanza".concat(currentStanza.toString())).find(".note");
+    if (notes.length > 0) {
+        if (leftOut) {
+            for (var i = 0; i < notes.length; i++) {
+                $("#".concat(notes[i].id.toString())).removeClass("enter");
+                $("#".concat(notes[i].id.toString())).addClass("exit");
+            }
+        }
+        else {
+            for (var i = 0; i < notes.length; i++) {
+                $("#".concat(notes[i].id.toString())).removeClass("exit");
+                $("#".concat(notes[i].id.toString())).addClass("enter");
+            }
+        }
+        leftOut = !leftOut;
+    }
+    else {
+        CloudActivate();
+    }
+}
+
+var cloudNumber = 0;
+function CloudActivate()
+{
+    cloudNumber++;
+    var x = $("#whiteCloud".concat((cloudNumber - 1).toString()));
+    var y = x.clone().prop('id', 'whiteCloud'.concat(cloudNumber.toString()));
+    y.appendTo(x.parent());
+    x.addClass("cloudActivate");
+
+    if(cloudNumber > 1)
+    {
+        var z = $("#whiteCloud".concat((cloudNumber - 2).toString()));
+        z.remove();
+    }
+}
+
+function MoveUp() {
+    if(currentStanza > 0)
+        currentStanza = currentStanza - 1;
+    ScrollTo(currentStanza);
+    UpdateCurrentStanza();
+
+    if(currentStanza == 0 & flipped)
+    {
+        $("#card").removeClass('flipped');
+        flipped = false;
+    }
 }
