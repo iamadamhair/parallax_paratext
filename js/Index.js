@@ -218,7 +218,13 @@ function checkKey(e) {
 
     e = e || window.event;
 
-    if (e.keyCode == '37') {
+    if (e.keyCode == '32') {
+        e.preventDefault();
+        window.scrollTo(0, 0);
+        if (flipped)
+            Flip();
+    }
+    else if (e.keyCode == '37') {
         e.preventDefault();
         ToggleLeftSide();
     }
