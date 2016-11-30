@@ -60,6 +60,7 @@ function AnimateWhiteBox() {
 
 $('.stanza').waypoint(function (direction) {
     var stanzaNumber = parseInt((this.element.id).match(/\d+$/)[0], 10);
+    
     if (direction == "down")
     {
         DarkenStanzaDown(stanzaNumber);
@@ -223,6 +224,10 @@ function checkKey(e) {
     }
     else if (e.keyCode == '38') {
         e.preventDefault();
+
+        if (leftOut)
+            ToggleLeftSide(); //MBHERE
+
         MoveUp();
     }
     else if (e.keyCode == '39') {
@@ -231,6 +236,10 @@ function checkKey(e) {
     }
     else if (e.keyCode == '40') {
         e.preventDefault();
+
+        if (leftOut)
+            ToggleLeftSide(); //MBHERE
+
         currentStanza = currentStanza + 1;
         ScrollTo(currentStanza);
         UpdateCurrentStanza();
@@ -335,9 +344,9 @@ function MoveUp() {
     }
 }
 
-//$('body').on({
-//    'mousewheel': function (e) {
-//        e.preventDefault();
-//        e.stopPropagation();
-//    }
-//})
+$('body').on({
+    'mousewheel': function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+})
