@@ -41,7 +41,7 @@ $('.stanza').waypoint(function (direction) {
                 DarkenStanzaDown(stanzaNumber);
                 setTimeout(function () {
                     AnimateDown(stanzaNumber);
-                    currentStanza = stanzaNumber;
+                    //currentStanza = stanzaNumber;
                     UpdateCurrentStanzaDiv();
                 }, textTime);
             }
@@ -50,7 +50,7 @@ $('.stanza').waypoint(function (direction) {
                 setTimeout(function () {
                     AnimateUp(stanzaNumber);
                     if (stanzaNumber > 0)
-                        currentStanza = stanzaNumber - 1;
+                        //currentStanza = stanzaNumber - 1;
                         UpdateCurrentStanzaDiv();
                 }, textTime);
             }
