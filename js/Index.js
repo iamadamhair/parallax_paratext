@@ -42,6 +42,7 @@ $('.stanza').waypoint(function (direction) {
                 setTimeout(function () {
                     AnimateDown(stanzaNumber);
                     currentStanza = stanzaNumber;
+                    UpdateCurrentStanzaDiv();
                 }, textTime);
             }
             else {
@@ -50,6 +51,7 @@ $('.stanza').waypoint(function (direction) {
                     AnimateUp(stanzaNumber);
                     if (stanzaNumber > 0)
                         currentStanza = stanzaNumber - 1;
+                        UpdateCurrentStanzaDiv();
                 }, textTime);
             }
         }, whiteBoxTime);
@@ -210,6 +212,7 @@ function checkKey(e) {
             ToggleLeftSide();
         window.scrollTo(0, 0);
         currentStanza = 0;
+        UpdateCurrentStanzaDiv();
         AnimateWhiteBox();
     }
     else if (e.keyCode == '37') {
@@ -236,6 +239,7 @@ function checkKey(e) {
             ToggleLeftSide(); //MBHERE
 
         currentStanza = currentStanza + 1;
+        UpdateCurrentStanzaDiv();
         ScrollTo(currentStanza);
     }
 }
@@ -339,8 +343,10 @@ function CloudActivate()
 }
 
 function MoveUp() {
-    if(currentStanza > 0)
+    if (currentStanza > 0) {
         currentStanza = currentStanza - 1;
+        UpdateCurrentStanzaDiv();
+    }
     ScrollTo(currentStanza);
     if(currentStanza == 0 & flipped)
     {
@@ -355,3 +361,8 @@ $('body').on({
         e.stopPropagation();
     }
 })
+
+function UpdateCurrentStanzaDiv()
+{
+    document.getElementById("currentStanzaDiv").innerHTML = currentStanza;
+}
