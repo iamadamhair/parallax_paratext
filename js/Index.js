@@ -159,6 +159,7 @@ function AnimateTextUp() {
 
 
 var imageHeight = 1080;
+var imageWidth = 1100;
 function AnimateDown(number) {
     $("#image".concat((number - 1).toString())).removeClass("enter");
     $("#image".concat((number - 1).toString())).addClass("exit");
@@ -168,12 +169,25 @@ function AnimateDown(number) {
     if (number > 0) {
         var image = document.getElementById("actualImage".concat(number.toString()));
         var imageBack = document.getElementById("actualImage".concat(number.toString()).concat("Back"));
-        var height = image.clientHeight;
-        var adjustment = imageHeight / parseFloat(height);
-        image.style.height = imageHeight;
-        image.style.width = adjustment * image.clientWidth;
-        imageBack.style.height = image.style.height;
-        imageBack.style.width = image.style.width;
+
+        var adjusment = 0;
+        if (imageHeight / parseFloat(image.clientHeight) > imageWidth / parseFloat(image.clientWidth)) {
+            var height = image.clientHeight;
+            adjustment = imageHeight / parseFloat(height);
+            image.style.height = imageHeight;
+            image.style.width = adjustment * image.clientWidth;
+            imageBack.style.height = image.style.height;
+            imageBack.style.width = image.style.width;
+        }
+        else {
+            var width = image.clientWidth;
+            adjustment = imageWidth / parseFloat(width);
+            image.style.width = imageWidth;
+            image.style.height = adjustment * image.clientHeight;
+            imageBack.style.height = image.style.height;
+            imageBack.style.width = image.style.width;
+        }
+
     }
 
     $("#image".concat((number).toString())).removeClass("exit");
