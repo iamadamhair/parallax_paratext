@@ -139,9 +139,26 @@ function AnimateUp(number) {
     $("#image".concat((number - 1).toString())).addClass("enter");
     $("#image".concat((number - 1).toString()).concat("Back")).removeClass("exitSoft");
     $("#image".concat((number - 1).toString()).concat("Back")).addClass("enterSoft");
+
+    if (flipped | currentStanza == 0)
+        AnimateTextUp();
 }
 
-var imageHeight = 1055;
+function AnimateTextUp() {
+    
+    var stanzaBackPrevious = $("#stanzaBack".concat((currentStanza + 1).toString()));
+    var stanzaBack = $("#stanzaBack".concat((currentStanza).toString()));
+
+    stanzaBackPrevious.removeClass("enter");
+    stanzaBackPrevious.addClass("exit");
+
+    stanzaBack.removeClass("exit");
+    stanzaBack.addClass("enter");
+
+}
+
+
+var imageHeight = 1080;
 function AnimateDown(number) {
     $("#image".concat((number - 1).toString())).removeClass("enter");
     $("#image".concat((number - 1).toString())).addClass("exit");
@@ -163,25 +180,43 @@ function AnimateDown(number) {
     $("#image".concat((number).toString())).addClass("enter");
     $("#image".concat((number).toString()).concat("Back")).removeClass("exitSoft");
     $("#image".concat((number).toString()).concat("Back")).addClass("enterSoft");
+    
+    if(flipped)
+        AnimateTextDown();
+}
+
+function AnimateTextDown() {
+    var stanzaBackPrevious = $("#stanzaBack".concat((currentStanza - 1).toString()));
+    var stanzaBack = $("#stanzaBack".concat((currentStanza).toString()));
+
+    stanzaBackPrevious.removeClass("enter");
+    stanzaBackPrevious.addClass("exit");
+
+    stanzaBack.removeClass("exit");
+    stanzaBack.addClass("enter");
+
 }
 
 document.onkeydown = checkKey;
 function checkKey(e) {
 
-    e.preventDefault();
 
     e = e || window.event;
 
     if (e.keyCode == '37') {
+        e.preventDefault();
         ToggleLeftSide();
     }
     else if (e.keyCode == '38') {
+        e.preventDefault();
         MoveUp();
     }
     else if (e.keyCode == '39') {
+        e.preventDefault();
         Flip();
     }
     else if (e.keyCode == '40') {
+        e.preventDefault();
         currentStanza = currentStanza + 1;
         ScrollTo(currentStanza);
         UpdateCurrentStanza();
@@ -210,11 +245,21 @@ function UpdateCurrentStanza()
 var flipped = false;
 function Flip() {
     if (currentStanza > 0) {
+        var stanzaBack = $("#stanzaBack".concat(currentStanza.toString()));
+
         if (flipped) {
             $("#card").removeClass('flipped');
+
+            stanzaBack.removeClass("enter");
+            stanzaBack.addClass("exit");
         }
         else {
-            $("#card").addClass('flipped');
+            var card = $("#card");
+            card.addClass('flipped');
+
+            stanzaBack.removeClass("exit");
+            setTimeout(function () { stanzaBack.addClass("enter") }, 250);
+
         }
         flipped = !flipped;
     }
@@ -246,6 +291,7 @@ function ToggleLeftSide() {
     }
 }
 
+
 var cloudNumber = 0;
 function CloudActivate()
 {
@@ -274,3 +320,10 @@ function MoveUp() {
         flipped = false;
     }
 }
+
+//$('body').on({
+//    'mousewheel': function (e) {
+//        e.preventDefault();
+//        e.stopPropagation();
+//    }
+//})

@@ -7,7 +7,7 @@
     background-color:black;
     color:white;
     display:inline-block;
-    text-align:center;
+    text-align:left;
     font-size:30px;
     position:fixed;
     top:0px;
@@ -30,9 +30,9 @@
     left:820px;*/
     z-index:-5;
     opacity:0;
-    height:1055px;
+    height:1080px;
     width:1100px;
-    background-color:green;
+    /*background-color:green;*/
     /*display:table-cell;*/
     /*text-align:center;*/
     /*vertical-align:middle;*/
@@ -40,7 +40,7 @@
 
 .helpImage.enter {
     -webkit-animation: fadein 2s; 
-    -webkit-animation-iteration-count: 1; 
+    -webkit-animation-iteration-count: 1;   
     -webkit-animation-fill-mode:forwards;
 }
 .helpImage.enterSoft {
@@ -82,10 +82,10 @@
 /*adapted from http://jsfiddle.net/rsadwick/zwWHY/ */
 .flip {
   -webkit-perspective: 800px;
-    height:1055px;
+    height:1080px;
     width:1100px;
     position:fixed;
-    top:50px;
+    top:0;
     left:820px;
 }
 .flip .card.flipped {
@@ -160,13 +160,13 @@
     height:0px;
     position:fixed;
     top:475px;
-    left:360px;
-    width:500px;
+    left:401px;
+    width:420px;
     z-index:2;
     color:white;
     background-color:white;
-    border-radius:10px;
-    border:2px solid white;
+    /*border-radius:10px;*/
+    /*border:2px solid white;*/
     opacity:.8;
     display:none;
 }
@@ -309,14 +309,14 @@
 }
 @keyframes fadeinSoft {
 0% { opacity: 0; }
-100% { opacity: .1; }
+100% { opacity: .2; }
 }
 @keyframes fadeout {
 0% { opacity: 1; }
 100% { opacity: 0; }
 }
 @keyframes fadeoutSoft {
-0% { opacity: .1; }
+0% { opacity: .2; }
 100% { opacity: 0; }
 }
 @-webkit-keyframes enterNote { 
@@ -327,3 +327,64 @@
 0%   { -webkit-transform:  translate(-100px, 0px) ;   } 
 100%   { -webkit-transform:  translate(0px, 0px);   }
 } 
+
+
+
+
+.cardBackText{
+    opacity:0;
+    /*-webkit-transform: rotateY(-180deg) scale(1, 1);*/
+    /*padding:40px;*/
+    z-index:4;
+    height:1080px;
+    width:1100px;
+    position:fixed;
+    top:50px;
+    left:820px;
+    display:table;
+    /*vertical-align:bottom;*/
+    /*border:solid black 2px;*/
+}
+.stanzaCell{
+    vertical-align:bottom;
+    display:table-cell;
+    width:100%;
+    text-align:center;
+    /*border:solid green 2px;*/
+}
+
+.stanzaWidth{
+    width:80%;
+    /*background-color:white;*/
+    background-color:rgba(255,255,255,0.6);
+    border-radius:10px; 
+    display:inline-block;
+    margin:80px;
+}
+
+.stanzaBack{
+    /*position:absolute;*/
+    /*background-color:rgba(255,255,255,0.8);*/
+    padding:10px;
+    width:800px;
+    display:inline-block;
+    text-align:left;        
+    /*display:none;*/
+}
+
+.cardBackText.enter{
+    -webkit-animation: fadein 1s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode:forwards; 
+}
+.cardBackText.exit{
+    -webkit-animation: fadeout 1s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode:forwards; 
+}
+
+@keyframes show {
+0% { opacity: 0; }
+25% { opacity: 0; }
+100% { opacity: 1; }
+}

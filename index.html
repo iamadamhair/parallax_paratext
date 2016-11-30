@@ -7,14 +7,14 @@
 <body>
     
     
-    <div id="banner">
+    <!--<div id="banner">
         <div style="display:inline;">
-            <div style="display:table-cell;vertical-align:middle;height:50px">
-                Text
+            <div style="display:table-cell;vertical-align:middle;height:50px;position:relative;left:510px;">
+                Hcc Final Project
             </div>
         </div>
     </div>
-    <div id="bannerBuffer"></div>
+    <div id="bannerBuffer"></div>-->
 
     <img src="images/background7.jpg" style="position:fixed;
             top:10px;
@@ -24,7 +24,7 @@
             opacity:.8;
     "/>
 
-    <button onclick="Click()" style="position:fixed;top:50px;left:0;">Click Me</button> <!--TODO remove-->
+    <!--<button onclick="Click()" style="position:fixed;top:50px;left:0;">Click Me</button>--> <!--TODO remove-->
 
     <div class="flip">
         <div class="card" id="card">
@@ -127,8 +127,8 @@
                 </div>
 
             </div>
-            <div class="face back">
-                <img src="images/cardBack.jpg" style="height:1055px;width:1100px;opacity:.5;z-index:-50;position:fixed;"/>
+            <div class="face back" id="cardBack">
+                <img src="images/cardBack.jpg" style="height:1080px;width:1100px;opacity:.5;z-index:-50;position:fixed;"/>
 
                 <div id="image1Back" class="helpImage" style="z-index:-5;">
                     <img src="images/line 1.jpg" class="actualImage" id="actualImage1Back" />
@@ -226,500 +226,530 @@
                 <div id="image32Back" class="helpImage" style="z-index:-36;">
                     <img src="images/line 60.jpg" class="actualImage" id="actualImage32Back" />
                 </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="stanzaBack1" class="cardBackText">
+        <div class="stanzaCell">
+            <div class="stanzaWidth">
+                <div class="stanzaBack">
+                    In 18th century English law, women were bound by the laws of coverture. Under coverture, the husband and wife were one person, and that one person was the husband in the eyes of the common law. Therefore, as to her personal and property rights, the wife's legal existence was suspended during the marriage and merged into that of the husband. She lost the capacity to contract for herself, or to sue or be sued, without joining the husband as plaintiff or defendant. The husband was entitled to all of the wife's personal property and "choses in action" (lawsuits), and in turn, the husband became liable for all torts committed by the wife, whether before or after marriage.
+
+                    <br /><br />Wife-beating was both widely tolerated and sanctioned by law in 18th-century England. Husbands were legally entitled to strike their wives in order to ‘correct’ their conduct so long as moderation was the watchword. But even when domestic abuse far exceeded such nice distinctions, wives enjoyed little recourse to the law.
+
+                    <br /><br />Prior to the establishment of a divorce court in the middle of the 19th century, England was the only Protestant country in Europe without a specific divorce law. For the vast majority of unhappy couples in England, death—of oneself or one's other half—remained the only means of release from a violent, adulterous, or otherwise unbearable marriage.
+                    Alternatives inevitably developed. Desertion, bigamy, or wife-sale proved the last resort for some. Less prosaically, some couples negotiated legal deeds of separation, although these were not always foolproof in a court of law, especially when it came to agreements over women's rights to property or income. More secure were legal separations obtained through the ecclesiastical courts. Known as divorce a mensa et thoro—literally from bed and board—such rulings sanctioned separation but did not permit remarriage. Granted on grounds of extreme cruelty or repeated adultery, they were difficult, expensive, and time-consuming to obtain, especially for women. The vast majority of the plaintiffs were wealthy members of the gentry or aristocracy, and two-thirds were male.
+                    Only a tiny handful of powerful, rich, and well-connected couples succeeded in winning a full divorce.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="stanzaBack2" class="cardBackText">
+        <div class="stanzaCell">
+            <div class="stanzaWidth">
+                <div class="stanzaBack">
+                    Various states govern, or claim to govern, in the name of the people. Both the Roman Republic and the Roman Empire used the Latin term Senatus Populusque Romanus, (the Senate and People of Rome). This term was fixed to Roman legionary standards, and even after the Roman Emperors achieved a state of total personal autarchy, they continued to wield their power in the name of the Senate and People of Rome.
+
+                    <br /><br />A People's Republic is typically a Marxist or socialist one-party state that claims to govern on behalf of the people even if it in practice often turns out to be a dictatorship state. Populism is another umbrella term for various political tendencies that claim to represent the people, usually with an implication that they serve the common people instead of the elite.
+
+                    <br /><br />Chapter One, Article One of the Charter of the United Nations states that peoples have the right to self-determination
+                </div>
             </div>
         </div>
     </div>
 
 
+        <!--<div id="line" style="width:300px;position:fixed;top:50%;left:300px;height:25px;background-color:green;z-index:10;"></div>-->
+        <!--<div id="currentStanza" style="position:fixed;top:80px;left:800px;border:3px solid white;padding:20px;color:white;">0</div>-->
 
-    <!--<div id="line" style="width:300px;position:fixed;top:50%;left:300px;height:25px;background-color:green;z-index:10;"></div>-->
+        <div id="whiteBox"></div>
 
-    <!--<div id="currentStanza" style="position:fixed;top:80px;left:800px;border:3px solid white;padding:20px;color:white;">0</div>-->
+        <div id="whiteCloud0" class="whiteCloud"></div>
 
-    <div id="whiteBox"></div>
+        <div id="underTitle">
 
-    <div id="whiteCloud0" class="whiteCloud"></div>
+            <div id="poemBackground"></div>
 
-    <div id="underTitle">
-        
-        <div id="poemBackground"></div>
+            <div id="poem">
 
-        <div id="poem">
+                <div id="spaceBeforePoemTitle"></div>
 
-            <div id="spaceBeforePoemTitle"></div>
-
-            <div id="poemTitle">
-                <div id="titleAn">An</div>
-                <div id="titleEssay">Essay</div>
-                <div id="titleOn">on</div>
-                <div id="titleWoman">Woman</div>
-            </div>
-
-            <div id="author">
-                <br />
-                By: Mary Leapor
-            </div>
-
-            <div id="spaceUnderPoemTitle"></div>
-
-
-            <div id="stanza0" class="stanza" style="height:50px;"></div>
-
-            <div id="stanza1" class="stanza">
-                <div id="line1" class="line">Woman, a pleasing but a short-lived flow'r,</div>
-                <div id="line2" class="line">Too soft for business and too weak for pow'r:</div>
-            </div>
-            <div id="stanza2" class="stanza">
-                <div id="line3" class="line">A wife in bondage, or neglected maid;</div>
-            </div>
-            <div id="stanza3" class="stanza">
-                <div id="line4" class="line">Despised, if ugly; if she's fair, betrayed.</div>
-            </div>
-            <div id="stanza4" class="stanza">
-                <div id="line5" class="line">'Tis wealth alone inspires ev'ry grace,</div>
-                <div id="line6" class="line">
-                    And calls the raptures to her
-                    <span id="plenteous" class="containsNote">plenteous</span>
-                    <span id="plenteousNote" class="note">Not only blooming but wealthy.</span>
-                    face.
+                <div id="poemTitle">
+                    <div id="titleAn">An</div>
+                    <div id="titleEssay">Essay</div>
+                    <div id="titleOn">on</div>
+                    <div id="titleWoman">Woman</div>
                 </div>
-            </div>
-            <div id="stanza5" class="stanza">
-                <div id="line7" class="line">What numbers for those charming features pine,</div>
-                <div id="line8" class="line">
-                    If blooming
-                    <span id="acres" class="containsNote">acres</span>
-                    <span id="acresNote" class="note">Not only hair but property.</span>
-                    round her temples twine!
-                </div>
-            </div>
-            <div id="stanza6" class="stanza">
-                <div id="line9" class="line">Her lip the strawberry, and her eyes more bright</div>
-                <div id="line10" class="line">Than sparkling Venus in a frosty night;</div>
-                <div id="line11" class="line">Pale lilies fade and, when the fair appears,</div>
-            </div>
-            <div id="stanza7" class="stanza">
-                <div id="line12" class="line">
-                    Snow turns a
-                    <span id="negro" class="containsNote">negro</span>
-                    <span id="negroNote" class="note">Black, when set against the fair one's skin. The hyperbolic comparisons throughout this passage are intentionally ironic, as in Shakespeare's Sonnet 130.</span>
-                    and dissolves in tears,
-                </div>
-                <div id="line13" class="line">And, where the charmer treads her magic toe,</div>
-                <div id="line14" class="line">On English ground Arabian odours grow;</div>
-            </div>
-            <div id="stanza8" class="stanza">
-                <div id="line15" class="line">
-                    Till mighty
-                    <span id="Hymen" class="containsNote">Hymen</span>
-                    <span id="HymenNote" class="note">The god of marriage.</span>
-                    lifts his sceptred rod,
-                </div>
-                <div id="line16" class="line">And sinks her glories with a fatal nod,</div>
-            </div>
-            <div id="stanza9" class="stanza">
-                <div id="line17" class="line">Dissolves her triumphs, sweeps her charms away,</div>
-            </div>
-            <div id="stanza10" class="stanza">
-                <div id="line18" class="line">And turns the goddess to her native clay.</div>
-                <div id="line19" class="line">
-                    But,
-                    <span id="Artemisia" class="containsNote">Artemisia</span>,
-                    <span id="ArtemisiaNote" class="note">Bridget Freemantle, given the name of an ancient patron of the arts.</span>
-                    let your servant sing
-                </div>
-                <div id="line20" class="line">What small advantage wealth and beauties bring.</div>
-                <div id="line21" class="line">Who would be wise, that knew Pamphilia's fate?</div>
 
-                <div id="line22" class="line">Or who be fair, and joined to Sylvia's mate?</div>
-                <div id="line23" class="line">Sylvia, whose cheeks are fresh as early day,</div>
-                <div id="line24" class="line">As ev'ning mild, and sweet as spicy May:</div>
-            </div>
-            <div id="stanza11" class="stanza">
-                <div id="line25" class="line">And yet that face her partial husband tires,</div>
-                <div id="line26" class="line">And those bright eyes, that all the world admires.</div>
-            </div>
-            <div id="stanza12" class="stanza">
-                <div id="line27" class="line">Pamphilia's wit who does not strive to shun,</div>
-                <div id="line28" class="line">Like death's infection or a dog-day's sun?</div>
-            </div>
-            <div id="stanza13" class="stanza">
-                <div id="line29" class="line">The damsels view her with malignant eyes,</div>
-            </div>
-            <div id="stanza14" class="stanza">
-                <div id="line30" class="line">The men are vexed to find a nymph so wise:</div>
-                <div id="line31" class="line">And wisdom only serves to make her know</div>
-            </div>
-            <div id="stanza15" class="stanza">
-                <div id="line32" class="line">The keen sensation of superior woe.</div>
-                <div id="line33" class="line">The secret whisper and the list'ning ear,</div>
-            </div>
-            <div id="stanza16" class="stanza">
-                <div id="line34" class="line">The scornful eyebrow and the hated sneer,</div>
-            </div>
-            <div id="stanza17" class="stanza">
-                <div id="line35" class="line">The giddy censures of her babbling kind,</div>
-                <div id="line36" class="line">With thousand ills that grate a gentle mind,</div>
-                <div id="line37" class="line">By her are tasted in the first degree,</div>
-                <div id="line38" class="line">Though overlooked by Simplicus and me.</div>
-            </div>
-            <div id="stanza18" class="stanza">
-                <div id="line39" class="line">Does thirst of gold a virgin's heart inspire,</div>
-                <div id="line40" class="line">Instilled by nature or a careful sire?</div>
-            </div>
-            <div id="stanza19" class="stanza">
-                <div id="line41" class="line">Then let her quit extravagance and play,</div>
-                <div id="line42" class="line">The brisk companion and expensive tea,</div>
-            </div>
-            <div id="stanza20" class="stanza">
-                <div id="line43" class="line">To feast with Cordia in her filthy sty</div>
-                <div id="line44" class="line">On stewed potatoes or on mouldy pie;</div>
-            </div>
-            <div id="stanza21" class="stanza">
-                <div id="line45" class="line">
-                    Whose
-                    <span id="eager" class="containsNote">eager</span>
-                    <span id="eagerNote" class="note">fierce</span>
-                    eyes stare ghastly at the poor,
+                <div id="author">
+                    <br />
+                    By: Mary Leapor
                 </div>
-                <div id="line46" class="line">And fright the beggars from her hated door;</div>
-            </div>
-            <div id="stanza22" class="stanza">
-                <div id="line47" class="line">In greasy clouts she wraps her smoky chin,</div>
-            </div>
-            <div id="stanza23" class="stanza">
-                <div id="line48" class="line">And holds that pride's a never-pardoned sin.</div>
-            </div>
-            <div id="stanza24" class="stanza">
-                <div id="line49" class="line">If this be wealth, no matter where it falls;</div>
-                <div id="line50" class="line">
-                    But save, ye Muses, save your
-                    <span id="Miras" class="containsNote">Mira's</span>
-                    <span id="MirasNote" class="note">Leapor's pen name.</span>
-                    walls:
-                </div>
-                <div id="line51" class="line">Still give me pleasing indolence and ease,</div>
-            </div>
-            <div id="stanza25" class="stanza">
-                <div id="line52" class="line">A fire to warm me and a friend to please.</div>
-                <div id="line53" class="line">Since, whether sunk in avarice or pride,</div>
-            </div>
-            <div id="stanza26" class="stanza">
-                <div id="line54" class="line">A wanton virgin or a starving bride;</div>
-            </div>
-            <div id="stanza27" class="stanza">
-                <div id="line55" class="line">Or wond'ring crowds attend her charming tongue,</div>
-            </div>
-            <div id="stanza28" class="stanza">
-                <div id="line56" class="line">Or, deemed an idiot, ever speaks the wrong;</div>
-            </div>
-            <div id="stanza29" class="stanza">
-                <div id="line57" class="line">Though nature armed us for the growing ill</div>
-            </div>
-            <div id="stanza30" class="stanza">
-                <div id="line58" class="line">With fraudful cunning and a headstrong will;</div>
-            </div>
-            <div id="stanza31" class="stanza">
-                <div id="line59" class="line">Yet, with ten thousand follies to her charge,</div>
-            </div>
-            <div id="stanza32" class="stanza">
-                <div id="line60" class="line">Unhappy woman's but a slave at large.</div>
-            </div>
 
-            <div id="stanza33" class="stanza"></div>
+                <div id="spaceUnderPoemTitle"></div>
 
 
-            <!--<div id="stanza0" class="stanza" style="height:50px;"></div>
+                <div id="stanza0" class="stanza" style="height:50px;"></div>
 
-        <div id="stanza1" class="stanza">
-            <div id="line1" class="line">The
-                <span id="curfew" class="containsNote">curfew</span>
-                <span id="curfewNote" class="note">A bell rung in the evening.</span>
-                    tolls the knell of parting day, </div>
-            <div id="line2" class="line">The lowing herd wind slowly o'er the lea, </div>
-            <div id="line3" class="line">The plowman homeward plods his weary way, </div>
-            <div id="line4" class="line">And leaves the world to darkness and to me. </div>
-        </div>
-        <br />
-        <div id="stanza2" class="stanza">
-            <div id="line5" class="line">Now fades the glimm'ring landscape on the sight, </div>
-            <div id="line6" class="line">And all the air a solemn stillness holds, </div>
-            <div id="line7" class="line">Save where the beetle wheels his droning flight, </div>
-            <div id="line8" class="line">And drowsy tinklings lull the distant folds; </div>
-        </div>
-        <br />
-        <div id="stanza3" class="stanza">
-            <div id="line9" class="line">Save that from yonder ivy-mantled tow'r </div>
-            <div id="line10" class="line">The moping owl does to the moon complain </div>
-            <div id="line11" class="line">Of such, as wand'ring near her secret bow'r, </div>
-            <div id="line12" class="line">Molest her ancient solitary reign. </div>
-        </div>
-        <br />
-        <div id="stanza4" class="stanza">
-            <div id="line13" class="line">Beneath those rugged elms, that yew-tree's shade, </div>
-            <div id="line14" class="line">Where heaves the turf in many a mould'ring heap, </div>
-            <div id="line15" class="line">Each in his narrow cell for ever laid, </div>
-            <div id="line16" class="line">The
-                <span id="rude" class="containsNote">rude</span>
-                <span id="rudeNote" class="note">uneducated</span>
-                    forefathers of the hamlet sleep. </div>
-        </div>
-        <br />
-        <div id="stanza5" class="stanza">
-            <div id="line17" class="line">The breezy call of incense-breathing Morn, </div>
-            <div id="line18" class="line">The swallow twitt'ring from the straw-built shed, </div>
-            <div id="line19" class="line">The cock's shrill clarion, or the echoing
-                <span id="horn" class="containsNote">horn</span>
-                <span id="hornNote" class="note">hunter's horn</span>
-                        , </div>
-            <div id="line20" class="line">No more shall rouse them from their lowly bed. </div>
-        </div>
-        <br />
-        <div id="stanza6" class="stanza">
-            <div id="line21" class="line">For them no more the blazing hearth shall burn, </div>
-            <div id="line22" class="line">Or busy housewife ply her evening care: </div>
-            <div id="line23" class="line">No children run to lisp their sire's return, </div>
-            <div id="line24" class="line">Or climb his knees the envied kiss to share. </div>
-        </div>
-        <br />
-        <div id="stanza7" class="stanza">
-            <div id="line25" class="line">Oft did the harvest to their sickle yield, </div>
-            <div id="line26" class="line">Their furrow oft the stubborn
-                <span id="glebe" class="containsNote">glebe</span>
-                <span id="glebeNote" class="note">soil</span>
-                     has broke; </div>
-            <div id="line27" class="line">How jocund did they drive their team afield! </div>
-            <div id="line28" class="line">How bow'd the woods beneath their sturdy stroke! </div>
-        </div>
-        <br />
-        <div id="stanza8" class="stanza">
-            <div id="line29" class="line">Let not Ambition mock their useful toil, </div>
-            <div id="line30" class="line">Their homely joys, and destiny obscure; </div>
-            <div id="line31" class="line">Nor Grandeur hear with a disdainful smile </div>
-            <div id="line32" class="line">The short and simple annals of the poor. </div>
-        </div>
-        <br />
-        <div id="stanza9" class="stanza">
-            <div id="line33" class="line">The boast of
-                <span id="heraldry" class="containsNote">heraldry</span>
-                <span id="heraldryNote" class="note">noble birth</span>
-                    , the pomp of pow'r, </div>
-            <div id="line34" class="line">And all that beauty, all that wealth e'er gave, </div>
-            <div id="line35" class="line">Awaits alike th' inevitable hour. </div>
-            <div id="line36" class="line">The paths of glory lead but to the grave. </div>
-        </div>
-        <br />
-        <div id="stanza10" class="stanza">
-            <div id="line37" class="line">Nor you, ye proud, impute to these the fault, </div>
-            <div id="line38" class="line">If Mem'ry o'er their tomb no
-                <span id="trophies" class="containsNote">trophies</span>
-                <span id="trophiesNote" class="note">An ornamental or symbolic group of figures depicting the achievments of the deceased.</span>
-                     raise, </div>
-            <div id="line39" class="line">Where thro' the long-drawn aisle and
-                <span id="fretted" class="containsNote">fretted</span>
-                <span id="frettedNote" class="note">Decorated with intersecting lines in relief.</span>
-                    vault </div>
-            <div id="line40" class="line">The pealing anthem swells the note of praise. </div>
-        </div>
-        <br />
-        <div id="stanza11" class="stanza">
-            <div id="line41" class="line">Can
-                <span id="storiedUrn" class="containsNote">storied urn</span>
-                <span id="storiedUrnNote" class="note">A funeral urn with an epitaph or pictured story inscribed on it.</span>
-                    or
-                <span id="animated" class="containsNote">animated</span>
-                <span id="animatedNote" class="note">lifelike</span>
-                    bust </div>
-            <div id="line42" class="line">Back to its mansion call the fleeting breath? </div>
-            <div id="line43" class="line">Can Honour's voice
-                <span id="provoke" class="containsNote">provoke</span>
-                <span id="provokeNote" class="note">call forth</span>
-                    the silent dust, </div>
-            <div id="line44" class="line">Or Flatt'ry soothe the dull cold ear of Death? </div>
-        </div>
-        <br />
-        <div id="stanza12" class="stanza">
-            <div id="line45" class="line">Perhaps in this neglected spot is laid </div>
-            <div id="line46" class="line">Some heart once pregnant with celestial fire; </div>
-            <div id="line47" class="line">Hands, that the rod of empire might have
-                <span id="swayed" class="containsNote">sway'd</span>
-                <span id="swayedNote" class="note">wielded</span>
-                    , </div>
-            <div id="line48" class="line">Or wak'd to ecstasy the living lyre. </div>
-        </div>
-        <br />
-        <div id="stanza13" class="stanza">
-            <div id="line49" class="line">But Knowledge to their eyes her ample page </div>
-            <div id="line50" class="line">Rich with the spoils of time did ne'er unroll; </div>
-            <div id="line51" class="line">Chill Penury repress'd their noble
-                <span id="rage" class="containsNote">rage</span>
-                <span id="rageNote" class="note">inspiration</span>
-                    , </div>
-            <div id="line52" class="line">And froze the
-                <span id="genial" class="containsNote">genial</span>
-                <span id="genialNote" class="note">creative</span>
-                    current of the soul. </div>
-        </div>
-        <br />
-        <div id="stanza14" class="stanza">
-            <div id="line53" class="line">Full many a gem of purest ray serene, </div>
-            <div id="line54" class="line">The dark unfathom'd caves of ocean bear: </div>
-            <div id="line55" class="line">Full many a flow'r is born to blush unseen, </div>
-            <div id="line56" class="line">And waste its sweetness on the desert air. </div>
-        </div>
-        <br />
-        <div id="stanza15" class="stanza">
-            <div id="line57" class="line">Some village-
-                <span id="Hampden" class="containsNote">Hampden</span>
-                <span id="HampdenNote" class="note">John Hampden (1594 - 1643), who, both as a private citizen and as a member of Parliament, zealously defended the rights of the people against the autocratic policies of Charles I.</span>
-                    , that with dauntless breast </div>
-            <div id="line58" class="line">The little tyrant of his fields withstood; </div>
-            <div id="line59" class="line">Some mute inglorious Milton here may rest, </div>
-            <div id="line60" class="line">Some Cromwell guiltless of his country's blood. </div>
-        </div>
-        <br />
-        <div id="stanza16" class="stanza">
-            <div id="line61" class="line">Th' applause of list'ning senates to command, </div>
-            <div id="line62" class="line">The threats of pain and ruin to despise, </div>
-            <div id="line63" class="line">To scatter plenty o'er a smiling land, </div>
-            <div id="line64" class="line">And read their hist'ry in a nation's eyes, </div>
-        </div>
-        <br />
-        <div id="stanza17" class="stanza">
-            <div id="line65" class="line">Their lot forbade: nor circumscrib'd alone </div>
-            <div id="line66" class="line">Their growing virtues, but their crimes confin'd; </div>
-            <div id="line67" class="line">Forbade to wade through slaughter to a throne, </div>
-            <div id="line68" class="line">And shut the gates of mercy on mankind, </div>
-        </div>
-        <br />
-        <div id="stanza18" class="stanza">
-            <div id="line69" class="line">The struggling pangs of conscious truth to hide, </div>
-            <div id="line70" class="line">To quench the blushes of ingenuous shame, </div>
-            <div id="line71" class="line">Or heap the shrine of Luxury and Pride </div>
-            <div id="line72" class="line">With incense kindled at the Muse's flame. </div>
-        </div>
-        <br />
-        <div id="stanza19" class="stanza">
-            <div id="line73" class="line">Far from the madding crowd's ignoble strife, </div>
-            <div id="line74" class="line">Their sober wishes never learn'd to stray; </div>
-            <div id="line75" class="line">Along the cool sequester'd vale of life </div>
-            <div id="line76" class="line">They kept the noiseless tenor of their way. </div>
-        </div>
-        <br />
-        <div id="stanza20" class="stanza">
-            <div id="line77" class="line">Yet ev'n these bones from insult to protect, </div>
-            <div id="line78" class="line">Some frail memorial still erected nigh, </div>
-            <div id="line79" class="line">
-                <span id="line79" class="containsNote">With uncouth rhymes and shapeless sculpture deck'd,</span>
-                <span id="line79Note" class="note">Cf. "storied urn or animated bust" dedicated inside the church to "the proud" (line 41)</span>
+                <div id="stanza1" class="stanza">
+                    <div id="line1" class="line">Woman, a pleasing but a short-lived flow'r,</div>
+                    <div id="line2" class="line">Too soft for business and too weak for pow'r:</div>
+                </div>
+                <div id="stanza2" class="stanza">
+                    <div id="line3" class="line">A wife in bondage, or neglected maid;</div>
+                </div>
+                <div id="stanza3" class="stanza">
+                    <div id="line4" class="line">Despised, if ugly; if she's fair, betrayed.</div>
+                </div>
+                <div id="stanza4" class="stanza">
+                    <div id="line5" class="line">'Tis wealth alone inspires ev'ry grace,</div>
+                    <div id="line6" class="line">
+                        And calls the raptures to her
+                        <span id="plenteous" class="containsNote">plenteous</span>
+                        <span id="plenteousNote" class="note">Not only blooming but wealthy.</span>
+                        face.
                     </div>
-            <div id="line80" class="line">Implores the passing tribute of a sigh. </div>
-        </div>
-        <br />
-        <div id="stanza21" class="stanza">
-            <div id="line81" class="line">Their name, their years, spelt by th' unletter'd muse, </div>
-            <div id="line82" class="line">The place of fame and elegy supply: </div>
-            <div id="line83" class="line">And many a holy text around she strews, </div>
-            <div id="line84" class="line">That teach the rustic moralist to die. </div>
-        </div>
-        <br />
-        <div id="stanza22" class="stanza">
-            <div id="line85" class="line">For who to dumb Forgetfulness a prey, </div>
-            <div id="line86" class="line">This pleasing anxious being e'er resign'd, </div>
-            <div id="line87" class="line">Left the warm precincts of the cheerful day, </div>
-            <div id="line88" class="line">Nor cast one longing, ling'ring look behind? </div>
-        </div>
-        <br />
-        <div id="stanza23" class="stanza">
-            <div id="line89" class="line">On some fond breast the parting soul relies, </div>
-            <div id="line90" class="line">Some pious drops the closing eye requires; </div>
-            <div id="line91" class="line">Ev'n from the tomb the voice of Nature cries, </div>
-            <div id="line92" class="line">Ev'n in our ashes live their wonted fires. </div>
-        </div>
-        <br />
-        <div id="stanza24" class="stanza">
-            <div id="line93" class="line">For thee, who mindful of th' unhonour'd Dead </div>
-            <div id="line94" class="line">Dost in these lines their artless tale relate; </div>
-            <div id="line95" class="line">If
-                <span id="chance" class="containsNote">chance</span>
-                <span id="chanceNote" class="note">perchance</span>
-                    , by lonely contemplation led, </div>
-            <div id="line96" class="line">Some kindred spirit shall inquire thy fate, </div>
-        </div>
-        <br />
-        <div id="stanza25" class="stanza">
-            <div id="line97" class="line">Haply some hoary-headed swain may say, </div>
-            <div id="line98" class="line">"Oft have we seen him at the peep of dawn </div>
-            <div id="line99" class="line">Brushing with hasty steps the dews away </div>
-            <div id="line100" class="line">To meet the sun upon the upland lawn. </div>
-        </div>
-        <br />
-        <div id="stanza26" class="stanza">
-            <div id="line101" class="line">"There at the foot of yonder nodding beech </div>
-            <div id="line102" class="line">That wreathes its old fantastic roots so high, </div>
-            <div id="line103" class="line">His listless length at noontide would he stretch, </div>
-            <div id="line104" class="line">And pore upon the brook that babbles by. </div>
-        </div>
-        <br />
-        <div id="stanza27" class="stanza">
-            <div id="line105" class="line">"Hard by yon wood, now smiling as in scorn, </div>
-            <div id="line106" class="line">Mutt'ring his wayward fancies he would rove, </div>
-            <div id="line107" class="line">Now drooping, woeful wan, like one forlorn, </div>
-            <div id="line108" class="line">Or craz'd with care, or cross'd in hopeless love. </div>
-        </div>
-        <br />
-        <div id="stanza28" class="stanza">
-            <div id="line109" class="line">"One morn I miss'd him on the custom'd hill, </div>
-            <div id="line110" class="line">Along the heath and near his fav'rite tree; </div>
-            <div id="line111" class="line">Another came; nor yet beside the rill, </div>
-            <div id="line112" class="line">Nor up the lawn, nor at the wood was he; </div>
-        </div>
-        <br />
-        <div id="stanza29" class="stanza">
-            <div id="line113" class="line">"The next with dirges due in sad array </div>
-            <div id="line114" class="line">Slow thro' the church-way path we saw him borne. </div>
-            <div id="line115" class="line">Approach and read (for thou canst read) the lay, </div>
-            <div id="line116" class="line">Grav'd on the stone beneath yon aged thorn." </div>
-        </div>
-        <br />
-        <div id="stanza30" class="stanza">
-            <div id="line117" class="line">THE EPITAPH </div>
-            <div id="line118" class="line">Here rests his head upon the lap of Earth </div>
-            <div id="line119" class="line">A youth to Fortune and to Fame unknown. </div>
-            <div id="line120" class="line">Fair
-                <span id="science" class="containsNote">Science </span>
-                <span id="scienceNote" class="note">Learning</span>
-                    frown'd not on his humble birth, </div>
-            <div id="line121" class="line">And Melancholy mark'd him for her own. </div>
-        </div>
-        <br />
-        <div id="stanza31" class="stanza">
-            <div id="line122" class="line">Large was his bounty, and his soul sincere, </div>
-            <div id="line123" class="line">Heav'n did a recompense as largely send: </div>
-            <div id="line124" class="line">He gave to Mis'ry all he had, a tear, </div>
-            <div id="line125" class="line">He gain'd from Heav'n ('twas all he wish'd) a friend. </div>
-        </div>
-        <br />
-        <div id="stanza32" class="stanza">
-            <div id="line126" class="line">No farther seek his merits to disclose, </div>
-            <div id="line127" class="line">Or draw his frailties from their dread abode, </div>
-            <div id="line128" class="line">(There they alike in trembling hope repose) </div>
-            <div id="line129" class="line">The bosom of his Father and his God. </div>
+                </div>
+                <div id="stanza5" class="stanza">
+                    <div id="line7" class="line">What numbers for those charming features pine,</div>
+                    <div id="line8" class="line">
+                        If blooming
+                        <span id="acres" class="containsNote">acres</span>
+                        <span id="acresNote" class="note">Not only hair but property.</span>
+                        round her temples twine!
+                    </div>
+                </div>
+                <div id="stanza6" class="stanza">
+                    <div id="line9" class="line">Her lip the strawberry, and her eyes more bright</div>
+                    <div id="line10" class="line">Than sparkling Venus in a frosty night;</div>
+                    <div id="line11" class="line">Pale lilies fade and, when the fair appears,</div>
+                </div>
+                <div id="stanza7" class="stanza">
+                    <div id="line12" class="line">
+                        Snow turns a
+                        <span id="negro" class="containsNote">negro</span>
+                        <span id="negroNote" class="note">Black, when set against the fair one's skin. The hyperbolic comparisons throughout this passage are intentionally ironic, as in Shakespeare's Sonnet 130.</span>
+                        and dissolves in tears,
+                    </div>
+                    <div id="line13" class="line">And, where the charmer treads her magic toe,</div>
+                    <div id="line14" class="line">On English ground Arabian odours grow;</div>
+                </div>
+                <div id="stanza8" class="stanza">
+                    <div id="line15" class="line">
+                        Till mighty
+                        <span id="Hymen" class="containsNote">Hymen</span>
+                        <span id="HymenNote" class="note">The god of marriage.</span>
+                        lifts his sceptred rod,
+                    </div>
+                    <div id="line16" class="line">And sinks her glories with a fatal nod,</div>
+                </div>
+                <div id="stanza9" class="stanza">
+                    <div id="line17" class="line">Dissolves her triumphs, sweeps her charms away,</div>
+                </div>
+                <div id="stanza10" class="stanza">
+                    <div id="line18" class="line">And turns the goddess to her native clay.</div>
+                    <div id="line19" class="line">
+                        But,
+                        <span id="Artemisia" class="containsNote">Artemisia</span>,
+                        <span id="ArtemisiaNote" class="note">Bridget Freemantle, given the name of an ancient patron of the arts.</span>
+                        let your servant sing
+                    </div>
+                    <div id="line20" class="line">What small advantage wealth and beauties bring.</div>
+                    <div id="line21" class="line">Who would be wise, that knew Pamphilia's fate?</div>
+
+                    <div id="line22" class="line">Or who be fair, and joined to Sylvia's mate?</div>
+                    <div id="line23" class="line">Sylvia, whose cheeks are fresh as early day,</div>
+                    <div id="line24" class="line">As ev'ning mild, and sweet as spicy May:</div>
+                </div>
+                <div id="stanza11" class="stanza">
+                    <div id="line25" class="line">And yet that face her partial husband tires,</div>
+                    <div id="line26" class="line">And those bright eyes, that all the world admires.</div>
+                </div>
+                <div id="stanza12" class="stanza">
+                    <div id="line27" class="line">Pamphilia's wit who does not strive to shun,</div>
+                    <div id="line28" class="line">Like death's infection or a dog-day's sun?</div>
+                </div>
+                <div id="stanza13" class="stanza">
+                    <div id="line29" class="line">The damsels view her with malignant eyes,</div>
+                </div>
+                <div id="stanza14" class="stanza">
+                    <div id="line30" class="line">The men are vexed to find a nymph so wise:</div>
+                    <div id="line31" class="line">And wisdom only serves to make her know</div>
+                </div>
+                <div id="stanza15" class="stanza">
+                    <div id="line32" class="line">The keen sensation of superior woe.</div>
+                    <div id="line33" class="line">The secret whisper and the list'ning ear,</div>
+                </div>
+                <div id="stanza16" class="stanza">
+                    <div id="line34" class="line">The scornful eyebrow and the hated sneer,</div>
+                </div>
+                <div id="stanza17" class="stanza">
+                    <div id="line35" class="line">The giddy censures of her babbling kind,</div>
+                    <div id="line36" class="line">With thousand ills that grate a gentle mind,</div>
+                    <div id="line37" class="line">By her are tasted in the first degree,</div>
+                    <div id="line38" class="line">Though overlooked by Simplicus and me.</div>
+                </div>
+                <div id="stanza18" class="stanza">
+                    <div id="line39" class="line">Does thirst of gold a virgin's heart inspire,</div>
+                    <div id="line40" class="line">Instilled by nature or a careful sire?</div>
+                </div>
+                <div id="stanza19" class="stanza">
+                    <div id="line41" class="line">Then let her quit extravagance and play,</div>
+                    <div id="line42" class="line">The brisk companion and expensive tea,</div>
+                </div>
+                <div id="stanza20" class="stanza">
+                    <div id="line43" class="line">To feast with Cordia in her filthy sty</div>
+                    <div id="line44" class="line">On stewed potatoes or on mouldy pie;</div>
+                </div>
+                <div id="stanza21" class="stanza">
+                    <div id="line45" class="line">
+                        Whose
+                        <span id="eager" class="containsNote">eager</span>
+                        <span id="eagerNote" class="note">fierce</span>
+                        eyes stare ghastly at the poor,
+                    </div>
+                    <div id="line46" class="line">And fright the beggars from her hated door;</div>
+                </div>
+                <div id="stanza22" class="stanza">
+                    <div id="line47" class="line">In greasy clouts she wraps her smoky chin,</div>
+                </div>
+                <div id="stanza23" class="stanza">
+                    <div id="line48" class="line">And holds that pride's a never-pardoned sin.</div>
+                </div>
+                <div id="stanza24" class="stanza">
+                    <div id="line49" class="line">If this be wealth, no matter where it falls;</div>
+                    <div id="line50" class="line">
+                        But save, ye Muses, save your
+                        <span id="Miras" class="containsNote">Mira's</span>
+                        <span id="MirasNote" class="note">Leapor's pen name.</span>
+                        walls:
+                    </div>
+                    <div id="line51" class="line">Still give me pleasing indolence and ease,</div>
+                </div>
+                <div id="stanza25" class="stanza">
+                    <div id="line52" class="line">A fire to warm me and a friend to please.</div>
+                    <div id="line53" class="line">Since, whether sunk in avarice or pride,</div>
+                </div>
+                <div id="stanza26" class="stanza">
+                    <div id="line54" class="line">A wanton virgin or a starving bride;</div>
+                </div>
+                <div id="stanza27" class="stanza">
+                    <div id="line55" class="line">Or wond'ring crowds attend her charming tongue,</div>
+                </div>
+                <div id="stanza28" class="stanza">
+                    <div id="line56" class="line">Or, deemed an idiot, ever speaks the wrong;</div>
+                </div>
+                <div id="stanza29" class="stanza">
+                    <div id="line57" class="line">Though nature armed us for the growing ill</div>
+                </div>
+                <div id="stanza30" class="stanza">
+                    <div id="line58" class="line">With fraudful cunning and a headstrong will;</div>
+                </div>
+                <div id="stanza31" class="stanza">
+                    <div id="line59" class="line">Yet, with ten thousand follies to her charge,</div>
+                </div>
+                <div id="stanza32" class="stanza">
+                    <div id="line60" class="line">Unhappy woman's but a slave at large.</div>
+                </div>
+
+                <div id="stanza33" class="stanza"></div>
+
+
+                <!--<div id="stanza0" class="stanza" style="height:50px;"></div>
+
+                <div id="stanza1" class="stanza">
+                    <div id="line1" class="line">The
+                        <span id="curfew" class="containsNote">curfew</span>
+                        <span id="curfewNote" class="note">A bell rung in the evening.</span>
+                            tolls the knell of parting day, </div>
+                    <div id="line2" class="line">The lowing herd wind slowly o'er the lea, </div>
+                    <div id="line3" class="line">The plowman homeward plods his weary way, </div>
+                    <div id="line4" class="line">And leaves the world to darkness and to me. </div>
+                </div>
+                <br />
+                <div id="stanza2" class="stanza">
+                    <div id="line5" class="line">Now fades the glimm'ring landscape on the sight, </div>
+                    <div id="line6" class="line">And all the air a solemn stillness holds, </div>
+                    <div id="line7" class="line">Save where the beetle wheels his droning flight, </div>
+                    <div id="line8" class="line">And drowsy tinklings lull the distant folds; </div>
+                </div>
+                <br />
+                <div id="stanza3" class="stanza">
+                    <div id="line9" class="line">Save that from yonder ivy-mantled tow'r </div>
+                    <div id="line10" class="line">The moping owl does to the moon complain </div>
+                    <div id="line11" class="line">Of such, as wand'ring near her secret bow'r, </div>
+                    <div id="line12" class="line">Molest her ancient solitary reign. </div>
+                </div>
+                <br />
+                <div id="stanza4" class="stanza">
+                    <div id="line13" class="line">Beneath those rugged elms, that yew-tree's shade, </div>
+                    <div id="line14" class="line">Where heaves the turf in many a mould'ring heap, </div>
+                    <div id="line15" class="line">Each in his narrow cell for ever laid, </div>
+                    <div id="line16" class="line">The
+                        <span id="rude" class="containsNote">rude</span>
+                        <span id="rudeNote" class="note">uneducated</span>
+                            forefathers of the hamlet sleep. </div>
+                </div>
+                <br />
+                <div id="stanza5" class="stanza">
+                    <div id="line17" class="line">The breezy call of incense-breathing Morn, </div>
+                    <div id="line18" class="line">The swallow twitt'ring from the straw-built shed, </div>
+                    <div id="line19" class="line">The cock's shrill clarion, or the echoing
+                        <span id="horn" class="containsNote">horn</span>
+                        <span id="hornNote" class="note">hunter's horn</span>
+                                , </div>
+                    <div id="line20" class="line">No more shall rouse them from their lowly bed. </div>
+                </div>
+                <br />
+                <div id="stanza6" class="stanza">
+                    <div id="line21" class="line">For them no more the blazing hearth shall burn, </div>
+                    <div id="line22" class="line">Or busy housewife ply her evening care: </div>
+                    <div id="line23" class="line">No children run to lisp their sire's return, </div>
+                    <div id="line24" class="line">Or climb his knees the envied kiss to share. </div>
+                </div>
+                <br />
+                <div id="stanza7" class="stanza">
+                    <div id="line25" class="line">Oft did the harvest to their sickle yield, </div>
+                    <div id="line26" class="line">Their furrow oft the stubborn
+                        <span id="glebe" class="containsNote">glebe</span>
+                        <span id="glebeNote" class="note">soil</span>
+                             has broke; </div>
+                    <div id="line27" class="line">How jocund did they drive their team afield! </div>
+                    <div id="line28" class="line">How bow'd the woods beneath their sturdy stroke! </div>
+                </div>
+                <br />
+                <div id="stanza8" class="stanza">
+                    <div id="line29" class="line">Let not Ambition mock their useful toil, </div>
+                    <div id="line30" class="line">Their homely joys, and destiny obscure; </div>
+                    <div id="line31" class="line">Nor Grandeur hear with a disdainful smile </div>
+                    <div id="line32" class="line">The short and simple annals of the poor. </div>
+                </div>
+                <br />
+                <div id="stanza9" class="stanza">
+                    <div id="line33" class="line">The boast of
+                        <span id="heraldry" class="containsNote">heraldry</span>
+                        <span id="heraldryNote" class="note">noble birth</span>
+                            , the pomp of pow'r, </div>
+                    <div id="line34" class="line">And all that beauty, all that wealth e'er gave, </div>
+                    <div id="line35" class="line">Awaits alike th' inevitable hour. </div>
+                    <div id="line36" class="line">The paths of glory lead but to the grave. </div>
+                </div>
+                <br />
+                <div id="stanza10" class="stanza">
+                    <div id="line37" class="line">Nor you, ye proud, impute to these the fault, </div>
+                    <div id="line38" class="line">If Mem'ry o'er their tomb no
+                        <span id="trophies" class="containsNote">trophies</span>
+                        <span id="trophiesNote" class="note">An ornamental or symbolic group of figures depicting the achievments of the deceased.</span>
+                             raise, </div>
+                    <div id="line39" class="line">Where thro' the long-drawn aisle and
+                        <span id="fretted" class="containsNote">fretted</span>
+                        <span id="frettedNote" class="note">Decorated with intersecting lines in relief.</span>
+                            vault </div>
+                    <div id="line40" class="line">The pealing anthem swells the note of praise. </div>
+                </div>
+                <br />
+                <div id="stanza11" class="stanza">
+                    <div id="line41" class="line">Can
+                        <span id="storiedUrn" class="containsNote">storied urn</span>
+                        <span id="storiedUrnNote" class="note">A funeral urn with an epitaph or pictured story inscribed on it.</span>
+                            or
+                        <span id="animated" class="containsNote">animated</span>
+                        <span id="animatedNote" class="note">lifelike</span>
+                            bust </div>
+                    <div id="line42" class="line">Back to its mansion call the fleeting breath? </div>
+                    <div id="line43" class="line">Can Honour's voice
+                        <span id="provoke" class="containsNote">provoke</span>
+                        <span id="provokeNote" class="note">call forth</span>
+                            the silent dust, </div>
+                    <div id="line44" class="line">Or Flatt'ry soothe the dull cold ear of Death? </div>
+                </div>
+                <br />
+                <div id="stanza12" class="stanza">
+                    <div id="line45" class="line">Perhaps in this neglected spot is laid </div>
+                    <div id="line46" class="line">Some heart once pregnant with celestial fire; </div>
+                    <div id="line47" class="line">Hands, that the rod of empire might have
+                        <span id="swayed" class="containsNote">sway'd</span>
+                        <span id="swayedNote" class="note">wielded</span>
+                            , </div>
+                    <div id="line48" class="line">Or wak'd to ecstasy the living lyre. </div>
+                </div>
+                <br />
+                <div id="stanza13" class="stanza">
+                    <div id="line49" class="line">But Knowledge to their eyes her ample page </div>
+                    <div id="line50" class="line">Rich with the spoils of time did ne'er unroll; </div>
+                    <div id="line51" class="line">Chill Penury repress'd their noble
+                        <span id="rage" class="containsNote">rage</span>
+                        <span id="rageNote" class="note">inspiration</span>
+                            , </div>
+                    <div id="line52" class="line">And froze the
+                        <span id="genial" class="containsNote">genial</span>
+                        <span id="genialNote" class="note">creative</span>
+                            current of the soul. </div>
+                </div>
+                <br />
+                <div id="stanza14" class="stanza">
+                    <div id="line53" class="line">Full many a gem of purest ray serene, </div>
+                    <div id="line54" class="line">The dark unfathom'd caves of ocean bear: </div>
+                    <div id="line55" class="line">Full many a flow'r is born to blush unseen, </div>
+                    <div id="line56" class="line">And waste its sweetness on the desert air. </div>
+                </div>
+                <br />
+                <div id="stanza15" class="stanza">
+                    <div id="line57" class="line">Some village-
+                        <span id="Hampden" class="containsNote">Hampden</span>
+                        <span id="HampdenNote" class="note">John Hampden (1594 - 1643), who, both as a private citizen and as a member of Parliament, zealously defended the rights of the people against the autocratic policies of Charles I.</span>
+                            , that with dauntless breast </div>
+                    <div id="line58" class="line">The little tyrant of his fields withstood; </div>
+                    <div id="line59" class="line">Some mute inglorious Milton here may rest, </div>
+                    <div id="line60" class="line">Some Cromwell guiltless of his country's blood. </div>
+                </div>
+                <br />
+                <div id="stanza16" class="stanza">
+                    <div id="line61" class="line">Th' applause of list'ning senates to command, </div>
+                    <div id="line62" class="line">The threats of pain and ruin to despise, </div>
+                    <div id="line63" class="line">To scatter plenty o'er a smiling land, </div>
+                    <div id="line64" class="line">And read their hist'ry in a nation's eyes, </div>
+                </div>
+                <br />
+                <div id="stanza17" class="stanza">
+                    <div id="line65" class="line">Their lot forbade: nor circumscrib'd alone </div>
+                    <div id="line66" class="line">Their growing virtues, but their crimes confin'd; </div>
+                    <div id="line67" class="line">Forbade to wade through slaughter to a throne, </div>
+                    <div id="line68" class="line">And shut the gates of mercy on mankind, </div>
+                </div>
+                <br />
+                <div id="stanza18" class="stanza">
+                    <div id="line69" class="line">The struggling pangs of conscious truth to hide, </div>
+                    <div id="line70" class="line">To quench the blushes of ingenuous shame, </div>
+                    <div id="line71" class="line">Or heap the shrine of Luxury and Pride </div>
+                    <div id="line72" class="line">With incense kindled at the Muse's flame. </div>
+                </div>
+                <br />
+                <div id="stanza19" class="stanza">
+                    <div id="line73" class="line">Far from the madding crowd's ignoble strife, </div>
+                    <div id="line74" class="line">Their sober wishes never learn'd to stray; </div>
+                    <div id="line75" class="line">Along the cool sequester'd vale of life </div>
+                    <div id="line76" class="line">They kept the noiseless tenor of their way. </div>
+                </div>
+                <br />
+                <div id="stanza20" class="stanza">
+                    <div id="line77" class="line">Yet ev'n these bones from insult to protect, </div>
+                    <div id="line78" class="line">Some frail memorial still erected nigh, </div>
+                    <div id="line79" class="line">
+                        <span id="line79" class="containsNote">With uncouth rhymes and shapeless sculpture deck'd,</span>
+                        <span id="line79Note" class="note">Cf. "storied urn or animated bust" dedicated inside the church to "the proud" (line 41)</span>
+                            </div>
+                    <div id="line80" class="line">Implores the passing tribute of a sigh. </div>
+                </div>
+                <br />
+                <div id="stanza21" class="stanza">
+                    <div id="line81" class="line">Their name, their years, spelt by th' unletter'd muse, </div>
+                    <div id="line82" class="line">The place of fame and elegy supply: </div>
+                    <div id="line83" class="line">And many a holy text around she strews, </div>
+                    <div id="line84" class="line">That teach the rustic moralist to die. </div>
+                </div>
+                <br />
+                <div id="stanza22" class="stanza">
+                    <div id="line85" class="line">For who to dumb Forgetfulness a prey, </div>
+                    <div id="line86" class="line">This pleasing anxious being e'er resign'd, </div>
+                    <div id="line87" class="line">Left the warm precincts of the cheerful day, </div>
+                    <div id="line88" class="line">Nor cast one longing, ling'ring look behind? </div>
+                </div>
+                <br />
+                <div id="stanza23" class="stanza">
+                    <div id="line89" class="line">On some fond breast the parting soul relies, </div>
+                    <div id="line90" class="line">Some pious drops the closing eye requires; </div>
+                    <div id="line91" class="line">Ev'n from the tomb the voice of Nature cries, </div>
+                    <div id="line92" class="line">Ev'n in our ashes live their wonted fires. </div>
+                </div>
+                <br />
+                <div id="stanza24" class="stanza">
+                    <div id="line93" class="line">For thee, who mindful of th' unhonour'd Dead </div>
+                    <div id="line94" class="line">Dost in these lines their artless tale relate; </div>
+                    <div id="line95" class="line">If
+                        <span id="chance" class="containsNote">chance</span>
+                        <span id="chanceNote" class="note">perchance</span>
+                            , by lonely contemplation led, </div>
+                    <div id="line96" class="line">Some kindred spirit shall inquire thy fate, </div>
+                </div>
+                <br />
+                <div id="stanza25" class="stanza">
+                    <div id="line97" class="line">Haply some hoary-headed swain may say, </div>
+                    <div id="line98" class="line">"Oft have we seen him at the peep of dawn </div>
+                    <div id="line99" class="line">Brushing with hasty steps the dews away </div>
+                    <div id="line100" class="line">To meet the sun upon the upland lawn. </div>
+                </div>
+                <br />
+                <div id="stanza26" class="stanza">
+                    <div id="line101" class="line">"There at the foot of yonder nodding beech </div>
+                    <div id="line102" class="line">That wreathes its old fantastic roots so high, </div>
+                    <div id="line103" class="line">His listless length at noontide would he stretch, </div>
+                    <div id="line104" class="line">And pore upon the brook that babbles by. </div>
+                </div>
+                <br />
+                <div id="stanza27" class="stanza">
+                    <div id="line105" class="line">"Hard by yon wood, now smiling as in scorn, </div>
+                    <div id="line106" class="line">Mutt'ring his wayward fancies he would rove, </div>
+                    <div id="line107" class="line">Now drooping, woeful wan, like one forlorn, </div>
+                    <div id="line108" class="line">Or craz'd with care, or cross'd in hopeless love. </div>
+                </div>
+                <br />
+                <div id="stanza28" class="stanza">
+                    <div id="line109" class="line">"One morn I miss'd him on the custom'd hill, </div>
+                    <div id="line110" class="line">Along the heath and near his fav'rite tree; </div>
+                    <div id="line111" class="line">Another came; nor yet beside the rill, </div>
+                    <div id="line112" class="line">Nor up the lawn, nor at the wood was he; </div>
+                </div>
+                <br />
+                <div id="stanza29" class="stanza">
+                    <div id="line113" class="line">"The next with dirges due in sad array </div>
+                    <div id="line114" class="line">Slow thro' the church-way path we saw him borne. </div>
+                    <div id="line115" class="line">Approach and read (for thou canst read) the lay, </div>
+                    <div id="line116" class="line">Grav'd on the stone beneath yon aged thorn." </div>
+                </div>
+                <br />
+                <div id="stanza30" class="stanza">
+                    <div id="line117" class="line">THE EPITAPH </div>
+                    <div id="line118" class="line">Here rests his head upon the lap of Earth </div>
+                    <div id="line119" class="line">A youth to Fortune and to Fame unknown. </div>
+                    <div id="line120" class="line">Fair
+                        <span id="science" class="containsNote">Science </span>
+                        <span id="scienceNote" class="note">Learning</span>
+                            frown'd not on his humble birth, </div>
+                    <div id="line121" class="line">And Melancholy mark'd him for her own. </div>
+                </div>
+                <br />
+                <div id="stanza31" class="stanza">
+                    <div id="line122" class="line">Large was his bounty, and his soul sincere, </div>
+                    <div id="line123" class="line">Heav'n did a recompense as largely send: </div>
+                    <div id="line124" class="line">He gave to Mis'ry all he had, a tear, </div>
+                    <div id="line125" class="line">He gain'd from Heav'n ('twas all he wish'd) a friend. </div>
+                </div>
+                <br />
+                <div id="stanza32" class="stanza">
+                    <div id="line126" class="line">No farther seek his merits to disclose, </div>
+                    <div id="line127" class="line">Or draw his frailties from their dread abode, </div>
+                    <div id="line128" class="line">(There they alike in trembling hope repose) </div>
+                    <div id="line129" class="line">The bosom of his Father and his God. </div>
+                </div>
+
+                <div id="stanza33" class="stanza"></div>-->
+                <div id="spaceUnderPoem"></div>
+            </div>
+
         </div>
 
-        <div id="stanza33" class="stanza"></div>-->
-            <div id="spaceUnderPoem"></div>
-        </div>
-    
-    </div>
 
-
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>-->
-    <script src="js/jquery.min.js"></script>
-    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>-->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/Index.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>-->
+        <script src="js/jquery.min.js"></script>
+        <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>-->
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/Index.js"></script>
 </body>
 
 </html>
