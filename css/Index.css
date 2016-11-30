@@ -41,42 +41,25 @@ body {
 }
 
 .helpImage.enter {
-    -webkit-animation: fadein 2s; 
+    -webkit-animation: fadein .5s; 
     -webkit-animation-iteration-count: 1;   
     -webkit-animation-fill-mode:forwards;
 }
 .helpImage.enterSoft {
-    -webkit-animation: fadeinSoft 2s; 
+    -webkit-animation: fadeinSoft .5s; 
     -webkit-animation-iteration-count: 1; 
     -webkit-animation-fill-mode:forwards;
 }
 .helpImage.exit {
-    -webkit-animation: fadeout 2s; 
+    -webkit-animation: fadeout .5s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
 .helpImage.exitSoft {
-    -webkit-animation: fadeoutSoft 2s; 
+    -webkit-animation: fadeoutSoft .5s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
-
-/*.helpImage.flip {
-    -webkit-animation: flip1 .5s, flip2 .5s linear; 
-    -webkit-animation-delay: 0s, .5s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-transform-style: preserve-3d;
-    -webkit-animation-fill-mode:forwards; 
-    -webkit-perspective: 1200px;
-}
-.helpImage.flipBack {
-    -webkit-animation: flipBack 1s linear; 
-    -webkit-animation-iteration-count: 1;
-    -webkit-transform-style: preserve-3d;
-    -webkit-animation-fill-mode:forwards; 
-    -webkit-perspective: 1200px;
-}*/
-
 
 
 
@@ -252,12 +235,12 @@ body {
     border-bottom:2px solid green;*/
 }
 .stanza.black {
-    -webkit-animation: fadeBlack .5s; 
+    -webkit-animation: fadeBlack .25s; 
     -webkit-animation-iteration-count: 1; 
     -webkit-animation-fill-mode:forwards;
 }
 .stanza.lightgray {
-    -webkit-animation: fadeGray .5s; 
+    -webkit-animation: fadeGray .25s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
@@ -295,12 +278,12 @@ body {
     border:1px solid black;
 }
 .note.enter {
-    -webkit-animation: fadein .5s, enterNote .5s; 
+    -webkit-animation: fadein .25s, enterNote .25s; 
     -webkit-animation-iteration-count: 1; 
     -webkit-animation-fill-mode:forwards;
 }
 .note.exit {
-    -webkit-animation: fadeout .5s, exitNote .5s; 
+    -webkit-animation: fadeout .25s, exitNote .25s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
@@ -375,12 +358,12 @@ body {
 }
 
 .cardBackText.enter{
-    -webkit-animation: fadein 1s; 
+    -webkit-animation: fadein .5s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }
 .cardBackText.exit{
-    -webkit-animation: fadeout 1s; 
+    -webkit-animation: fadeout .5s; 
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode:forwards; 
 }

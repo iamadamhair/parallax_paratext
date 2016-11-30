@@ -3,7 +3,6 @@ var darkenStanzaPercentage = "50%";
 
 var darkenPercentage = "70%";
 var lightenPercentage = "40%";
-//var backgroundSlideTime = 1.5;
 
 function DarkenText(id) {
     var item = document.getElementById(id);
@@ -15,68 +14,46 @@ function LightenText(id) {
     item.style.color = "lightgray";
 }
 
-//$('.line').waypoint(function (direction) {
-//    if(direction == "down")
-//        DarkenText(this.element.id);
-//    else
-//        LightenText(this.element.id);
-//}, { offset: darkenPercentage })
-
-//$('.line').waypoint(function (direction) {
-//    if (direction == "down")
-//        LightenText(this.element.id);
-//    else
-//        DarkenText(this.element.id);
-//}, { offset: lightenPercentage })
-
-$('.containsNote').mouseover(function () {
-    //var note = document.getElementById(this.id.concat("Note"));
-    if($("#".concat(this.id)).css("color") == "rgb(0, 0, 0)") {
-        $("#".concat(this.id).concat("Note")).removeClass("exit");
-        $("#".concat(this.id).concat("Note")).addClass("enter");
-    }
-
-})
-
-$('.containsNote').mouseout(function () {
-    //document.getElementById(this.id).style.color = "blue";
-    if ($("#".concat(this.id)).css("color") == "rgb(0, 0, 0)") {
-        $("#".concat(this.id).concat("Note")).removeClass("enter");
-        $("#".concat(this.id).concat("Note")).addClass("exit");
-    }
-})
-
+var whiteBoxTime = 250;
+var textTime = 250;
+var helpImageTime = 500;
+var cardBackTextTime = 500;
 function AnimateWhiteBox() {
     if (currentStanza == 0) {
-        $("#whiteBox").animate({ height: "0" }, 500);
+        $("#whiteBox").animate({ height: "0" }, whiteBoxTime);
         document.getElementById("whiteBox").style.display = "none";
     }
     else {
         document.getElementById("whiteBox").style.display = "block";
         var clientHeight = document.getElementById('stanza'.concat(currentStanza.toString())).clientHeight;
-        $("#whiteBox").animate({ height: clientHeight.toString() }, 500);
+        $("#whiteBox").animate({ height: clientHeight.toString() }, whiteBoxTime);
     }
 }
 
 $('.stanza').waypoint(function (direction) {
+    while (holdOffWayPoint) { };
     var stanzaNumber = parseInt((this.element.id).match(/\d+$/)[0], 10);
     
-    if (direction == "down")
-    {
-        DarkenStanzaDown(stanzaNumber);
-        AnimateDown(stanzaNumber);
-        currentStanza = stanzaNumber;
-    }
-    else
-    {
-        DarkenStanzaUp(stanzaNumber);
-        AnimateUp(stanzaNumber);
-        if(stanzaNumber > 0)
-            currentStanza = stanzaNumber - 1;
-    }
-    UpdateCurrentStanza();
-    AnimateWhiteBox();
-//      DarkenText(this.element.id);
+    setTimeout(function () {
+        AnimateWhiteBox();
+        setTimeout(function () {
+            if (direction == "down") {
+                DarkenStanzaDown(stanzaNumber);
+                setTimeout(function () {
+                    AnimateDown(stanzaNumber);
+                    currentStanza = stanzaNumber;
+                }, textTime);
+            }
+            else {
+                DarkenStanzaUp(stanzaNumber);
+                setTimeout(function () {
+                    AnimateUp(stanzaNumber);
+                    if (stanzaNumber > 0)
+                        currentStanza = stanzaNumber - 1;
+                }, textTime);
+            }
+        }, whiteBoxTime);
+    }, 100);
 }, { offset: darkenStanzaPercentage })
 
 function MakeBlack(stanzaNumber) {
@@ -162,10 +139,7 @@ function AnimateTextUp() {
 var imageHeight = 1080;
 var imageWidth = 1100;
 function AnimateDown(number) {
-    $("#image".concat((number - 1).toString())).removeClass("enter");
-    $("#image".concat((number - 1).toString())).addClass("exit");
-    $("#image".concat((number - 1).toString()).concat("Back")).removeClass("enterSoft");
-    $("#image".concat((number - 1).toString()).concat("Back")).addClass("exitSoft");
+
 
     if (number > 0) {
         var image = document.getElementById("actualImage".concat(number.toString()));
@@ -191,13 +165,19 @@ function AnimateDown(number) {
 
     }
 
+    $("#image".concat((number - 1).toString())).removeClass("enter");
+    $("#image".concat((number - 1).toString())).addClass("exit");
+    $("#image".concat((number - 1).toString()).concat("Back")).removeClass("enterSoft");
+    $("#image".concat((number - 1).toString()).concat("Back")).addClass("exitSoft");
+
     $("#image".concat((number).toString())).removeClass("exit");
     $("#image".concat((number).toString())).addClass("enter");
     $("#image".concat((number).toString()).concat("Back")).removeClass("exitSoft");
     $("#image".concat((number).toString()).concat("Back")).addClass("enterSoft");
     
-    if(flipped)
-        AnimateTextDown();
+    if (flipped) {
+            AnimateTextDown();
+    }
 }
 
 function AnimateTextDown() {
@@ -224,9 +204,13 @@ function checkKey(e) {
     }
     else if (e.keyCode == '32') {
         e.preventDefault();
-        window.scrollTo(0, 0);
         if (flipped)
             FlipLeft();
+        if (leftOut)
+            ToggleLeftSide();
+        window.scrollTo(0, 0);
+        currentStanza = 0;
+        AnimateWhiteBox();
     }
     else if (e.keyCode == '37') {
         e.preventDefault();
@@ -253,27 +237,24 @@ function checkKey(e) {
 
         currentStanza = currentStanza + 1;
         ScrollTo(currentStanza);
-        UpdateCurrentStanza();
     }
 }
 
+var holdOffWayPoint = false;
 function ScrollTo(number) {
+    holdOffWayPoint = true;
+
     if (number == 0) {
         $('html, body').animate({
             scrollTop: $("#titleAn").offset().top - 300
-        }, 500);
+        });
     }
     else {
         $('html, body').animate({
             scrollTop: $("#stanza".concat(number.toString())).offset().top - 500
-        }, 500);
+        });
     }
-}
-
-function UpdateCurrentStanza()
-{
-    //var text = document.getElementById("currentStanza");
-    //text.innerHTML = currentStanza.toString();
+    holdOffWayPoint = false;
 }
 
 var flipped = false;
@@ -285,9 +266,12 @@ function FlipRight() {
             var card = $("#card");
             card.addClass('flipped');
 
-            stanzaBack.removeClass("exit");
-            setTimeout(function () { stanzaBack.addClass("enter") }, 250);
-            flipped = true;
+
+            setTimeout(function () {
+                stanzaBack.removeClass("exit");
+                stanzaBack.addClass("enter");
+                flipped = true;
+            }, helpImageTime);
         }
     }
     else {
@@ -300,11 +284,13 @@ function FlipLeft() {
         var stanzaBack = $("#stanzaBack".concat(currentStanza.toString()));
 
         if (flipped) {
-            $("#card").removeClass('flipped');
-
             stanzaBack.removeClass("enter");
             stanzaBack.addClass("exit");
-            flipped = false;
+
+            //setTimeout( function() {
+                $("#card").removeClass('flipped');
+                flipped = false;
+            //}, cardBackTextTime);
         }
     }
     else {
@@ -356,8 +342,6 @@ function MoveUp() {
     if(currentStanza > 0)
         currentStanza = currentStanza - 1;
     ScrollTo(currentStanza);
-    UpdateCurrentStanza();
-
     if(currentStanza == 0 & flipped)
     {
         $("#card").removeClass('flipped');
