@@ -88,6 +88,19 @@ function MakeLightGray(stanzaNumber) {
     $("#stanza".concat((stanzaNumber).toString())).addClass("lightGray");
 }
 
+var clicked = false;
+function Click() {
+    if (clicked) {
+        $("#image0").removeClass("flip");
+        $("#image0").addClass("flipBack");
+    }
+    else {
+        $("#image0").removeClass("flipBack");
+        $("#image0").addClass("flip");
+    }
+    clicked = !clicked;
+}
+
 function DarkenStanza(stanzaNumber) {
     if (stanzaNumber % 3 == 1) {
         if (stanzaNumber > 3) {
@@ -119,39 +132,55 @@ function DarkenStanzaUp(stanzaNumber) {
 function AnimateUp(number) {
     $("#image".concat((number).toString())).removeClass("enter");
     $("#image".concat((number).toString())).addClass("exit");
+    $("#image".concat((number).toString()).concat("Back")).removeClass("enterSoft");
+    $("#image".concat((number).toString()).concat("Back")).addClass("exitSoft");
 
     $("#image".concat((number - 1).toString())).removeClass("exit");
     $("#image".concat((number - 1).toString())).addClass("enter");
+    $("#image".concat((number - 1).toString()).concat("Back")).removeClass("exitSoft");
+    $("#image".concat((number - 1).toString()).concat("Back")).addClass("enterSoft");
 }
 
 var imageHeight = 1055;
 function AnimateDown(number) {
     $("#image".concat((number - 1).toString())).removeClass("enter");
     $("#image".concat((number - 1).toString())).addClass("exit");
+    $("#image".concat((number - 1).toString()).concat("Back")).removeClass("enterSoft");
+    $("#image".concat((number - 1).toString()).concat("Back")).addClass("exitSoft");
 
     if (number > 0) {
         var image = document.getElementById("actualImage".concat(number.toString()));
+        var imageBack = document.getElementById("actualImage".concat(number.toString()).concat("Back"));
         var height = image.clientHeight;
         var adjustment = imageHeight / parseFloat(height);
         image.style.height = imageHeight;
         image.style.width = adjustment * image.clientWidth;
+        imageBack.style.height = image.style.height;
+        imageBack.style.width = image.style.width;
     }
 
     $("#image".concat((number).toString())).removeClass("exit");
     $("#image".concat((number).toString())).addClass("enter");
+    $("#image".concat((number).toString()).concat("Back")).removeClass("exitSoft");
+    $("#image".concat((number).toString()).concat("Back")).addClass("enterSoft");
 }
 
 document.onkeydown = checkKey;
 function checkKey(e) {
 
+    e.preventDefault();
+
     e = e || window.event;
 
-    if (e.keyCode == '37') {
+    if (e.keyCode == '38') {
         currentStanza = currentStanza - 1;
         ScrollTo(currentStanza);
         UpdateCurrentStanza();
     }
     else if (e.keyCode == '39') {
+        Flip();
+    }
+    else if (e.keyCode == '40') {
         currentStanza = currentStanza + 1;
         ScrollTo(currentStanza);
         UpdateCurrentStanza();
@@ -175,4 +204,15 @@ function UpdateCurrentStanza()
 {
     //var text = document.getElementById("currentStanza");
     //text.innerHTML = currentStanza.toString();
+}
+
+var flipped = false;
+function Flip() {
+    if (flipped) {
+        $("#card").removeClass('flipped');
+    }
+    else {
+        $("#card").addClass('flipped');
+    }
+    flipped = !flipped;
 }
