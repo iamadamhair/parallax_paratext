@@ -218,15 +218,20 @@ function checkKey(e) {
 
     e = e || window.event;
 
-    if (e.keyCode == '32') {
+    if (e.keyCode == '16') {
+        e.preventDefault();
+        ToggleLeftSide();
+    }
+    else if (e.keyCode == '32') {
         e.preventDefault();
         window.scrollTo(0, 0);
         if (flipped)
-            Flip();
+            FlipLeft();
     }
     else if (e.keyCode == '37') {
         e.preventDefault();
-        ToggleLeftSide();
+        FlipLeft();
+        //ToggleLeftSide();
     }
     else if (e.keyCode == '38') {
         e.preventDefault();
@@ -238,7 +243,7 @@ function checkKey(e) {
     }
     else if (e.keyCode == '39') {
         e.preventDefault();
-        Flip();
+        FlipRight();
     }
     else if (e.keyCode == '40') {
         e.preventDefault();
@@ -272,8 +277,26 @@ function UpdateCurrentStanza()
 }
 
 var flipped = false;
-function Flip() {
-    if (currentStanza > 0) {
+function FlipRight() {
+    if (currentStanza > 0 & !flipped) {
+        var stanzaBack = $("#stanzaBack".concat(currentStanza.toString()));
+
+        if (!flipped) {
+            var card = $("#card");
+            card.addClass('flipped');
+
+            stanzaBack.removeClass("exit");
+            setTimeout(function () { stanzaBack.addClass("enter") }, 250);
+            flipped = true;
+        }
+    }
+    else {
+        CloudActivate();
+    }
+}
+
+function FlipLeft() {
+    if (currentStanza > 0 & flipped) {
         var stanzaBack = $("#stanzaBack".concat(currentStanza.toString()));
 
         if (flipped) {
@@ -281,16 +304,8 @@ function Flip() {
 
             stanzaBack.removeClass("enter");
             stanzaBack.addClass("exit");
+            flipped = false;
         }
-        else {
-            var card = $("#card");
-            card.addClass('flipped');
-
-            stanzaBack.removeClass("exit");
-            setTimeout(function () { stanzaBack.addClass("enter") }, 250);
-
-        }
-        flipped = !flipped;
     }
     else {
         CloudActivate();
