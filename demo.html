@@ -1,0 +1,159 @@
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="css/Index.css" type="text/css" />
+</head>
+<body>
+    
+    <div id="currentStanzaDiv" style="position:fixed;top:20px;left:20px;font-size:40px;display:none;">a</div>
+
+    <!--<div id="banner">
+        <div style="display:inline;">
+            <div style="display:table-cell;vertical-align:middle;height:50px;position:relative;left:510px;">
+                Hcc Final Project
+            </div>
+        </div>
+    </div>
+    <div id="bannerBuffer"></div>-->
+
+    <img src="images/background7.jpg" style="position:fixed;
+            top:-20px;
+            left:-20px;
+            z-index:-50;
+            -webkit-filter: blur(5px);
+            opacity:.8;
+            width:2000px;
+            height:1200px;
+    "/>
+
+    <!--<button onclick="Click()" style="position:fixed;top:50px;left:0;">Click Me</button>--> <!--TODO remove-->
+
+    <div class="flip">
+        <div class="card" id="card">
+            <div class="face front">
+                <div id="image1" class="helpImage" style="z-index:-5;">
+                    <img src="images/line 1.jpg" class="actualImage" id="actualImage1" />
+                </div>
+                
+                <div id="image2" class="helpImage" style="z-index:-6;">
+                    <img src="images/line 3.jpg" class="actualImage" id="actualImage2" />
+                </div>
+                
+                <!--<div id="image2" class="helpImage" style="z-index:-6;">
+                    <img src="images/line 3.jpg" class="actualImage" id="actualImage2" />
+                </div>-->
+                
+
+            </div>
+            <div class="face back" id="cardBack">
+                <img src="images/cardBack.jpg" style="height:1080px;width:1100px;opacity:.5;z-index:-50;position:fixed;"/>
+
+                <div id="image1Back" class="helpImage" style="z-index:-5;">
+                    <img src="images/line 1.jpg" class="actualImage" id="actualImage1Back" />
+                </div>
+                
+                <div id="image2Back" class="helpImage" style="z-index:-6;">
+                    <img src="images/line 3.jpg" class="actualImage" id="actualImage2Back" />
+                </div>
+               
+                <!--<div id="image2Back" class="helpImage" style="z-index:-6;">
+                    <img src="images/line 3.jpg" class="actualImage" id="actualImage2Back" />
+                </div>-->
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="stanzaBack1" class="cardBackText">
+        <div class="stanzaCell">
+            <div class="stanzaWidth">
+                <div class="stanzaBack">
+                    This is additional information.
+                    <br>You can put whatever you want here.
+                    <br>Shouldn't be a footnote since those are accomodated elsewhere.
+                    <br>This would typically be longer background information.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div id="stanzaBackX" class="cardBackText">
+        <div class="stanzaCell">
+            <div class="stanzaWidth">
+                <div class="stanzaBack">
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+
+        <!--<div id="line" style="width:300px;position:fixed;top:50%;left:300px;height:25px;background-color:green;z-index:10;"></div>-->
+        <!--<div id="currentStanza" style="position:fixed;top:80px;left:800px;border:3px solid white;padding:20px;color:white;">0</div>-->
+
+        <div id="whiteBox"></div>
+
+        <div id="whiteCloud0" class="whiteCloud"></div>
+
+        <div id="underTitle">
+
+            <div id="poemBackground"></div>
+
+            <div id="poem">
+
+                <div id="spaceBeforePoemTitle"></div>
+
+                <div id="poemTitle">
+                    <div id="titleAn">Title</div>
+                    <div id="titleEssay">with</div>
+                    <div id="titleOn">Stylized</div>
+                    <div id="titleWoman">Formatting</div>
+                </div>
+
+                <div id="author">
+                    <br />
+                    By: Author
+                    <br />
+                    Press down to start
+                </div>
+
+                <div id="spaceUnderPoemTitle"></div>
+
+
+                <div id="stanza0" class="stanza" style="height:50px;"></div>
+
+                <div id="stanza1" class="stanza">
+                    <div id="line1" class="line">Press right to flip the image to reveal help text</div>
+                    <div id="line2" class="line">Press left to flip the image back. Not all images need text</div>
+                </div>
+                
+                <div id="stanza2" class="stanza">
+                    <div id="line3" class="line">This image doesn't have help text</div>
+                    <div id="line4" class="line">
+                        Press shift to reveal or hide  
+                        <span id="plenteous" class="containsNote">a footnote</span>
+                        <span id="plenteousNote" class="note">These are from the book. Additional information or definitions. Information activated by the shift key is indicated by an underlined word.</span>
+                        
+                    </div>
+                </div>
+
+                <div id="stanza3" class="stanza">
+                </div>
+                
+                <div id="spaceUnderPoem"></div>
+            </div>
+
+        </div>
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/Index.js"></script>
+</body>
+
+</html>
