@@ -122,6 +122,8 @@ function AnimateUp(number) {
 
     if (flipped | currentStanza == 0)
         AnimateTextUp();
+
+    RefreshArrows();
 }
 
 function AnimateTextUp() {
@@ -180,6 +182,8 @@ function AnimateDown(number) {
     if (flipped) {
             AnimateTextDown();
     }
+
+    RefreshArrows();
 }
 
 function AnimateTextDown() {
@@ -275,6 +279,7 @@ function FlipRight() {
                 stanzaBack.removeClass("exit");
                 stanzaBack.addClass("enter");
                 flipped = true;
+                RefreshArrows();
             }, helpImageTime);
         }
     }
@@ -294,6 +299,7 @@ function FlipLeft() {
             //setTimeout( function() {
                 $("#card").removeClass('flipped');
                 flipped = false;
+                RefreshArrows();
             //}, cardBackTextTime);
         }
     }
@@ -365,4 +371,21 @@ $('body').on({
 function UpdateCurrentStanzaDiv()
 {
     document.getElementById("currentStanzaDiv").innerHTML = currentStanza;
+}
+
+function RefreshArrows() {
+
+    if (!flipped & document.getElementById("stanzaBack".concat(currentStanza.toString())) != undefined) {
+        $("#rightArrow").css({ "opacity": "1" });
+    }
+    else {
+        $("#rightArrow").css({ "opacity": "0" });
+    }
+
+    if (flipped ) {
+        $("#leftArrow").css({ "opacity": "1" });
+    }
+    else {
+        $("#leftArrow").css({ "opacity": "0" });
+    }
 }
