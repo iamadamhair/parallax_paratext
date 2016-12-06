@@ -417,22 +417,22 @@ function RemoveStanzaArrow() {
 
 }
 
-function RefreshArrows() {
+//function RefreshArrows() {
 
-    if (!flipped & document.getElementById("stanzaBack".concat(currentStanza.toString())) != undefined) {
-        $("#rightArrow").css({ "opacity": "1" });
-    }
-    else {
-        $("#rightArrow").css({ "opacity": "0" });
-    }
+//    if (!flipped & document.getElementById("stanzaBack".concat(currentStanza.toString())) != undefined) {
+//        $("#rightArrow").css({ "opacity": "1" });
+//    }
+//    else {
+//        $("#rightArrow").css({ "opacity": "0" });
+//    }
 
-    if (flipped ) {
-        $("#leftArrow").css({ "opacity": "1" });
-    }
-    else {
-        $("#leftArrow").css({ "opacity": "0" });
-    }
-}
+//    if (flipped ) {
+//        $("#leftArrow").css({ "opacity": "1" });
+//    }
+//    else {
+//        $("#leftArrow").css({ "opacity": "0" });
+//    }
+//}
 
 var shortCardWidthTime = 250;
 var shortCardWidth = "350px";
@@ -460,7 +460,7 @@ function ActivateShortCard()
         
         var string = stanzaBackText.innerText;
         var result = "";
-        var charactersPerLine = 60;
+        var charactersPerLine = 120;
         var record = true;
         var charactersInLine = 0;
         for (var i = 0; i < string.length; i++)
