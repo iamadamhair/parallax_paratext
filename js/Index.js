@@ -311,8 +311,9 @@ function FlipLeft() {
                 //RefreshArrows();
 
                 ResetShortCard();
+                RemoveStanzaLeftArrow();
                 $("#stanzaSmallCardFrame".concat(currentStanza.toString())).removeClass("flipped");
-
+                ShowStanzaArrow();
             //}, cardBackTextTime);
         }
     }
@@ -401,10 +402,6 @@ function ShowStanzaArrow() {
         arrow.removeClass("exit");
         arrow.addClass("enter");
     }
-    else {
-        arrow.removeClass("enter");
-        arrow.addClass("exit");
-    }
 }
 
 function RemoveStanzaArrow() {
@@ -414,7 +411,43 @@ function RemoveStanzaArrow() {
         arrow.addClass("exit");
         setTimeout(function () { }, 250);
     }
+}
 
+function ShowStanzaLeftArrow() {
+    var arrowLeft = $("#stanzaArrowLeft".concat(currentStanza.toString()));
+    arrowLeft.removeClass("exit");
+    arrowLeft.addClass("enter");
+}
+
+function RemoveStanzaLeftArrow() {
+    var arrowLeft = $("#stanzaArrowLeft".concat(currentStanza.toString()));
+    arrowLeft.removeClass("enter");
+    arrowLeft.addClass("exit");
+}
+
+function BoxLeftArrow() {
+    //var leftArrow = $("#stanzaArrowLeft".concat(currentStanza)).find("span")[0];
+    //leftArrow.css({ "-webkit-box-shadow": "2px 2px white"});
+}
+
+var rightArrowOffset = 10;
+function MoveStanzaArrowToCard() {
+    var stanzaArrow = $("#stanzaArrow".concat(currentStanza));
+    var arrowLeft = stanzaArrow.position().left;
+    stanzaArrow.animate({ left: arrowLeft + shortCardWidthNumber + rightArrowOffset }, shortCardWidthTime);
+}
+
+function MoveCardArrowToStanza() {
+    var stanzaArrow = $("#stanzaArrow".concat(currentStanza));
+    var arrowLeft = stanzaArrow.position().left;
+    stanzaArrow.animate({ left: arrowLeft - shortCardWidthNumber - rightArrowOffset }, shortCardWidthTime);
+}
+
+function ResetStanzaArrow() {
+    var stanzaArrow = $("#stanzaArrow".concat(currentStanza));
+    var arrowLeft = stanzaArrow.position().left;
+    stanzaArrow.css({ "left": (arrowLeft - shortCardWidthNumber - rightArrowOffset).toString(), "opacity": "0" });
+    stanzaArrow.removeClass("enter");
 }
 
 //function RefreshArrows() {
@@ -435,18 +468,21 @@ function RemoveStanzaArrow() {
 //}
 
 var shortCardWidthTime = 250;
-var shortCardWidth = "350px";
+var shortCardWidthNumber = 450;
+var shortCardWidth = shortCardWidthNumber.toString().concat("px");
 var rightOut = false;
 function ActivateShortCard()
 {
     var smallCard = $("#stanzaSmallCard".concat(currentStanza.toString()));
-    if (flipped)
+    if (flipped | !ThereIsExtraContent())
     {
         CloudActivate();
     }
     else if (rightOut)
     {
         FlipRight();
+        ResetStanzaArrow();
+        BoxLeftArrow();
         $("#stanzaSmallCardFrame".concat(currentStanza.toString())).addClass("flipped");
         $("#stanzaSmallCardText".concat(currentStanza.toString())).removeClass("enter");
         $("#stanzaSmallCardText".concat(currentStanza.toString())).addClass("exit");
@@ -495,7 +531,11 @@ function ActivateShortCard()
         setTimeout(function () {
             $("#stanzaSmallCardText".concat(currentStanza.toString())).removeClass("exit");
             $("#stanzaSmallCardText".concat(currentStanza.toString())).addClass("enter");
+            ShowStanzaLeftArrow();
         }, 2 * shortCardWidthTime);
+        setTimeout(function () {
+            MoveStanzaArrowToCard();
+        }, 250);
         rightOut = true;
     }
 }
@@ -508,15 +548,18 @@ function WithdrawShortCard() {
     else if (rightOut) {
         $("#stanzaSmallCardText".concat(currentStanza.toString())).removeClass("enter");
         $("#stanzaSmallCardText".concat(currentStanza.toString())).addClass("exit");
+        RemoveStanzaLeftArrow();
 
         var smallCard = $("#stanzaSmallCard".concat(currentStanza.toString()));
 
         var smallCardHeight = document.getElementById('stanzaSmallCard'.concat(currentStanza.toString())).clientHeight;
 
         var stanzaHeight = document.getElementById('stanza'.concat(currentStanza.toString())).clientHeight;
+        MoveCardArrowToStanza();
         smallCard.animate({ height: stanzaHeight }, shortCardWidthTime);
         smallCard.animate({ width: "0" }, shortCardWidthTime);
         rightOut = false;
+
         setTimeout(function () {
             smallCard.css({ "height": smallCardHeight.toString() });
             document.getElementById('stanzaSmallCard'.concat(currentStanza.toString())).clientHeight = smallCardHeight;
