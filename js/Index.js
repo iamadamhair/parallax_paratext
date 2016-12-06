@@ -126,7 +126,7 @@ function AnimateUp(number) {
     if (flipped | currentStanza == 0)
         AnimateTextUp();
 
-    RefreshArrows();
+    //RefreshArrows();
 }
 
 function AnimateTextUp() {
@@ -186,7 +186,7 @@ function AnimateDown(number) {
             AnimateTextDown();
     }
 
-    RefreshArrows();
+    //RefreshArrows();
 }
 
 function AnimateTextDown() {
@@ -288,7 +288,7 @@ function FlipRight() {
                 stanzaBack.removeClass("exit");
                 stanzaBack.addClass("enter");
                 flipped = true;
-                RefreshArrows();
+                //RefreshArrows();
             }, helpImageTime);
         }
     }
@@ -308,7 +308,7 @@ function FlipLeft() {
             //setTimeout( function() {
                 $("#card").removeClass('flipped');
                 flipped = false;
-                RefreshArrows();
+                //RefreshArrows();
 
                 ResetShortCard();
                 $("#stanzaSmallCardFrame".concat(currentStanza.toString())).removeClass("flipped");
