@@ -28,6 +28,9 @@ function AnimateWhiteBox() {
         var clientHeight = document.getElementById('stanza'.concat(currentStanza.toString())).clientHeight;
         $("#whiteBox").animate({ height: clientHeight.toString() }, whiteBoxTime);
     }
+    setTimeout(function () {
+        ShowStanzaArrow();
+    }, whiteBoxTime);
 }
 
 $('.stanza').waypoint(function (direction) {
@@ -221,26 +224,32 @@ function checkKey(e) {
     }
     else if (e.keyCode == '37') {
         e.preventDefault();
-        FlipLeft();
+        if (rightOut)
+            WithdrawShortCard();
+        else
+            FlipLeft();
         //ToggleLeftSide();
     }
     else if (e.keyCode == '38') {
         e.preventDefault();
+        RemoveStanzaArrow();
 
-        if (leftOut)
-            ToggleLeftSide(); //MBHERE
+        if (rightOut)
+            WithdrawShortCard();
 
         MoveUp();
     }
     else if (e.keyCode == '39') {
         e.preventDefault();
-        FlipRight();
+        ActivateShortCard();
+        //FlipRight();
     }
     else if (e.keyCode == '40') {
         e.preventDefault();
+        RemoveStanzaArrow();
 
-        if (leftOut)
-            ToggleLeftSide(); //MBHERE
+        if (rightOut)
+            WithdrawShortCard();
 
         currentStanza = currentStanza + 1;
         UpdateCurrentStanzaDiv();
@@ -259,7 +268,7 @@ function ScrollTo(number) {
     }
     else {
         $('html, body').animate({
-            scrollTop: $("#stanza".concat(number.toString())).offset().top - 500
+            scrollTop: $("#stanza".concat(number.toString())).offset().top - 475
         });
     }
     holdOffWayPoint = false;
@@ -300,6 +309,10 @@ function FlipLeft() {
                 $("#card").removeClass('flipped');
                 flipped = false;
                 RefreshArrows();
+
+                ResetShortCard();
+                $("#stanzaSmallCardFrame".concat(currentStanza.toString())).removeClass("flipped");
+
             //}, cardBackTextTime);
         }
     }
@@ -373,6 +386,37 @@ function UpdateCurrentStanzaDiv()
     document.getElementById("currentStanzaDiv").innerHTML = currentStanza;
 }
 
+function ThereIsExtraContent() {
+    if (document.getElementById("stanzaBack".concat(currentStanza.toString()))) {
+        return true;
+    }
+
+    return false;
+}
+
+function ShowStanzaArrow() {
+    var arrow = $("#stanzaArrow".concat(currentStanza.toString()));
+    if(ThereIsExtraContent())
+    {
+        arrow.removeClass("exit");
+        arrow.addClass("enter");
+    }
+    else {
+        arrow.removeClass("enter");
+        arrow.addClass("exit");
+    }
+}
+
+function RemoveStanzaArrow() {
+    var arrow = $("#stanzaArrow".concat(currentStanza.toString()));
+    if (ThereIsExtraContent()) {
+        arrow.removeClass("enter");
+        arrow.addClass("exit");
+        setTimeout(function () { }, 250);
+    }
+
+}
+
 function RefreshArrows() {
 
     if (!flipped & document.getElementById("stanzaBack".concat(currentStanza.toString())) != undefined) {
@@ -388,4 +432,101 @@ function RefreshArrows() {
     else {
         $("#leftArrow").css({ "opacity": "0" });
     }
+}
+
+var shortCardWidthTime = 250;
+var shortCardWidth = "350px";
+var rightOut = false;
+function ActivateShortCard()
+{
+    var smallCard = $("#stanzaSmallCard".concat(currentStanza.toString()));
+    if (flipped)
+    {
+        CloudActivate();
+    }
+    else if (rightOut)
+    {
+        FlipRight();
+        $("#stanzaSmallCardFrame".concat(currentStanza.toString())).addClass("flipped");
+        $("#stanzaSmallCardText".concat(currentStanza.toString())).removeClass("enter");
+        $("#stanzaSmallCardText".concat(currentStanza.toString())).addClass("exit");
+        rightOut = false;
+
+    }
+    else
+    {
+        var stanzaBackText = $("#stanzaBack".concat(currentStanza.toString())).find(".stanzaBack")[0];
+        var text = $("#stanzaSmallCardText".concat(currentStanza.toString()))[0];
+        
+        var string = stanzaBackText.innerText;
+        var result = "";
+        var charactersPerLine = 60;
+        var record = true;
+        var charactersInLine = 0;
+        for (var i = 0; i < string.length; i++)
+        {
+            if(string[i] == '\n') {
+                record = true;
+                charactersInLine = 0;
+                result = result.concat('\n');
+            }
+            else if (record) {
+                result = result.concat(string[i]);
+                charactersInLine++;
+                if (charactersInLine == charactersPerLine) {
+                    record = false;
+                    result = result.concat("...");
+                }
+            }
+        }
+
+        //text.innerText = stanzaBackText.innerText;
+        text.innerText = result;
+        smallCard.css({ "width": shortCardWidth });
+        var smallCardHeight = document.getElementById('stanzaSmallCard'.concat(currentStanza.toString())).clientHeight;
+        smallCard.css({ "width": "0px", "background-color": "rgba(255,255,255,.6)" });
+
+
+
+        var stanzaHeight = document.getElementById('stanza'.concat(currentStanza.toString())).clientHeight;
+        smallCard.css({ "height": stanzaHeight.toString() });
+        smallCard.animate({ width: shortCardWidth }, shortCardWidthTime);
+        smallCard.animate({ height: smallCardHeight }, shortCardWidthTime);
+        setTimeout(function () {
+            $("#stanzaSmallCardText".concat(currentStanza.toString())).removeClass("exit");
+            $("#stanzaSmallCardText".concat(currentStanza.toString())).addClass("enter");
+        }, 2 * shortCardWidthTime);
+        rightOut = true;
+    }
+}
+
+function WithdrawShortCard() {
+    if (flipped)
+    {
+
+    }
+    else if (rightOut) {
+        $("#stanzaSmallCardText".concat(currentStanza.toString())).removeClass("enter");
+        $("#stanzaSmallCardText".concat(currentStanza.toString())).addClass("exit");
+
+        var smallCard = $("#stanzaSmallCard".concat(currentStanza.toString()));
+
+        var smallCardHeight = document.getElementById('stanzaSmallCard'.concat(currentStanza.toString())).clientHeight;
+
+        var stanzaHeight = document.getElementById('stanza'.concat(currentStanza.toString())).clientHeight;
+        smallCard.animate({ height: stanzaHeight }, shortCardWidthTime);
+        smallCard.animate({ width: "0" }, shortCardWidthTime);
+        rightOut = false;
+        setTimeout(function () {
+            smallCard.css({ "height": smallCardHeight.toString() });
+            document.getElementById('stanzaSmallCard'.concat(currentStanza.toString())).clientHeight = smallCardHeight;
+        }, 500);
+    }
+}
+
+function ResetShortCard()
+{
+    var smallCard = $("#stanzaSmallCard".concat(currentStanza.toString()));
+    smallCard.css({ "width": "0px" });
+
 }
