@@ -29,10 +29,12 @@ function AnimateWhiteBox() {
         $("#whiteBox").animate({ height: clientHeight.toString() }, whiteBoxTime);
     }
     setTimeout(function () {
+        if(!flipped)
         ShowStanzaArrow();
     }, whiteBoxTime);
 }
 
+/*
 $('.stanza').waypoint(function (direction) {
     while (holdOffWayPoint) { };
     var stanzaNumber = parseInt((this.element.id).match(/\d+$/)[0], 10);
@@ -60,6 +62,7 @@ $('.stanza').waypoint(function (direction) {
         }, whiteBoxTime);
     }, 100);
 }, { offset: darkenStanzaPercentage })
+*/
 
 function MakeBlack(stanzaNumber) {
     $("#stanza".concat((stanzaNumber).toString())).removeClass("lightGray");
@@ -108,20 +111,20 @@ function DarkenStanzaDown(stanzaNumber) {
 }
 
 function DarkenStanzaUp(stanzaNumber) {
-        MakeBlack(stanzaNumber - 1);
-        MakeLightGray(stanzaNumber);
+        MakeBlack(stanzaNumber);
+        MakeLightGray(stanzaNumber + 1);
 }
 
 function AnimateUp(number) {
-    $("#image".concat((number).toString())).removeClass("enter");
-    $("#image".concat((number).toString())).addClass("exit");
-    $("#image".concat((number).toString()).concat("Back")).removeClass("enterSoft");
-    $("#image".concat((number).toString()).concat("Back")).addClass("exitSoft");
+    $("#image".concat((number + 1).toString())).removeClass("enter");
+    $("#image".concat((number + 1).toString())).addClass("exit");
+    $("#image".concat((number + 1).toString()).concat("Back")).removeClass("enterSoft");
+    $("#image".concat((number + 1).toString()).concat("Back")).addClass("exitSoft");
 
-    $("#image".concat((number - 1).toString())).removeClass("exit");
-    $("#image".concat((number - 1).toString())).addClass("enter");
-    $("#image".concat((number - 1).toString()).concat("Back")).removeClass("exitSoft");
-    $("#image".concat((number - 1).toString()).concat("Back")).addClass("enterSoft");
+    $("#image".concat((number).toString())).removeClass("exit");
+    $("#image".concat((number).toString())).addClass("enter");
+    $("#image".concat((number).toString()).concat("Back")).removeClass("exitSoft");
+    $("#image".concat((number).toString()).concat("Back")).addClass("enterSoft");
 
     if (flipped | currentStanza == 0)
         AnimateTextUp();
@@ -207,19 +210,27 @@ function checkKey(e) {
 
     e = e || window.event;
 
-    if (e.keyCode == '16') {
+    //if (e.keyCode == '16') {
+    //    e.preventDefault();
+    //    currentStanza = currentStanza - 1;
+    //    MoveUp();
+    //}
+    //else 
+    if (e.keyCode == '32') {
         e.preventDefault();
-        ToggleLeftSide();
-    }
-    else if (e.keyCode == '32') {
-        e.preventDefault();
+
         if (flipped)
             FlipLeft();
-        if (leftOut)
-            ToggleLeftSide();
+        if (rightOut)
+            WithdrawShortCard();
+        RemoveStanzaArrow();
+
+        $("#image".concat((currentStanza).toString())).removeClass("enter");
+        $("#image".concat((currentStanza).toString())).addClass("exit");
+        MakeLightGray(currentStanza);
+        
         window.scrollTo(0, 0);
         currentStanza = 0;
-        UpdateCurrentStanzaDiv();
         AnimateWhiteBox();
     }
     else if (e.keyCode == '37') {
@@ -232,10 +243,6 @@ function checkKey(e) {
     }
     else if (e.keyCode == '38') {
         e.preventDefault();
-        RemoveStanzaArrow();
-
-        if (rightOut)
-            WithdrawShortCard();
 
         MoveUp();
     }
@@ -246,20 +253,86 @@ function checkKey(e) {
     }
     else if (e.keyCode == '40') {
         e.preventDefault();
+
+        MoveDown();
+    }
+}
+
+function MoveUp() {
+
+    if (rightOut) {
+        WithdrawShortCard();
+        RemoveStanzaArrow();
+    }
+    else if (flipped)
+        RemoveStanzaLeftArrow();
+    else
         RemoveStanzaArrow();
 
-        if (rightOut)
-            WithdrawShortCard();
-
-        currentStanza = currentStanza + 1;
-        UpdateCurrentStanzaDiv();
-        ScrollTo(currentStanza);
+    if (currentStanza > 0) {
+        currentStanza = currentStanza - 1;
     }
+
+    if (flipped)
+        ShowStanzaLeftArrow();
+
+    holdOffWayPoint = true;
+    ScrollTo(currentStanza);
+    while (holdOffWayPoint) { };
+
+    if (currentStanza == 0 & flipped) {
+        $("#card").removeClass('flipped');
+        flipped = false;
+    }
+    
+    setTimeout(function () {
+        AnimateWhiteBox();
+        setTimeout(function () {
+            DarkenStanzaUp(currentStanza);
+            setTimeout(function () {
+                AnimateUp(currentStanza);
+            }, textTime);
+        }, whiteBoxTime);
+    }, 250);
+}
+
+function MoveDown() {
+
+    if (rightOut) {
+        WithdrawShortCard();
+        RemoveStanzaArrow();
+    }
+    else if (flipped)
+        RemoveStanzaLeftArrow();
+    else
+        RemoveStanzaArrow();
+
+    currentStanza = currentStanza + 1;
+
+    if (flipped)
+        ShowStanzaLeftArrow();
+
+    UpdateCurrentStanzaDiv();
+
+    holdOffWayPoint = true;
+    ScrollTo(currentStanza);
+    while (holdOffWayPoint) { };
+
+    
+    setTimeout(function () {
+        AnimateWhiteBox();
+        setTimeout(function () {
+            DarkenStanzaDown(currentStanza);
+            setTimeout(function () {
+                AnimateDown(currentStanza);
+            }, textTime);
+        }, whiteBoxTime);
+    }, 250);
 }
 
 var holdOffWayPoint = false;
 function ScrollTo(number) {
-    holdOffWayPoint = true;
+    //disableScrollDetection = true;
 
     if (number == 0) {
         $('html, body').animate({
@@ -362,25 +435,29 @@ function CloudActivate()
     }
 }
 
-function MoveUp() {
-    if (currentStanza > 0) {
-        currentStanza = currentStanza - 1;
-        UpdateCurrentStanzaDiv();
-    }
-    ScrollTo(currentStanza);
-    if(currentStanza == 0 & flipped)
-    {
-        $("#card").removeClass('flipped');
-        flipped = false;
-    }
-}
+//$('body').on({
+//    'mousewheel': function (e) {
+//        e.preventDefault();
+//        e.stopPropagation();
+//    }
+//})
 
-$('body').on({
-    'mousewheel': function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+window.addEventListener('mousewheel', function (e) {
+    //wDelta = e.wheelDelta < 0 ? 'down' : 'up';
+    if (!disableScrollDetection) {
+        if (e.wheelDelta < 0) {
+            MoveDown();
+        } else {
+            MoveUp();
+        }
+        disableScrollDetection = true;
+        setTimeout(function () {
+            disableScrollDetection = false;
+        }, 1000);
     }
-})
+});
+
+var disableScrollDetection = false;
 
 function UpdateCurrentStanzaDiv()
 {
