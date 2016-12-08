@@ -571,7 +571,8 @@ function ActivateShortCard()
         var stanzaBackText = $("#stanzaBack".concat(currentStanza.toString())).find(".stanzaBack")[0];
         var text = $("#stanzaSmallCardText".concat(currentStanza.toString()))[0];
         
-        var string = stanzaBackText.innerText;
+        //var string = stanzaBackText.innerText;
+        var string = stanzaBackText.innerHTML;
         var result = "";
         var charactersPerLine = 120;
         var record = true;
@@ -594,7 +595,7 @@ function ActivateShortCard()
         }
 
         //text.innerText = stanzaBackText.innerText;
-        text.innerText = result;
+        text.innerHTML = result;
         smallCard.css({ "width": shortCardWidth });
         var smallCardHeight = document.getElementById('stanzaSmallCard'.concat(currentStanza.toString())).clientHeight;
         smallCard.css({ "width": "0px", "background-color": "rgba(255,255,255,.6)" });

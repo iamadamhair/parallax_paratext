@@ -362,25 +362,7 @@ body {
 }
 
 .note{
-    position:absolute;
-    left:-15px;
-    width:100px;
-    z-index:1;
-    background:beige;
-    opacity:0;
-    border-radius:5px;
-    padding:3px;
-    border:1px solid black;
-}
-.note.enter {
-    -webkit-animation: fadein .25s, enterNote .25s; 
-    -webkit-animation-iteration-count: 1; 
-    -webkit-animation-fill-mode:forwards;
-}
-.note.exit {
-    -webkit-animation: fadeout .25s, exitNote .25s; 
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-fill-mode:forwards; 
+    text-decoration:underline;
 }
 
 @keyframes fadein {
